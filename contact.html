@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>預約諮詢｜比安學姊</title>
+    <meta name="description" content="預約紫微命理諮詢或 AI 數位顧問服務" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="theme-earth">
+    <header class="site-header"></header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="center reveal" style="margin-bottom: 56px">
+            <span class="eyebrow">Contact</span>
+            <h1>預約諮詢</h1>
+            <p class="lead">
+              填寫下方表單，我會在 24 小時內回覆你。也歡迎直接透過 LINE聯絡
+            </p>
+          </div>
+
+          <div class="split" style="align-items: start">
+            <form id="contact-form" class="card form reveal">
+              <div class="row">
+                <label
+                  >姓名<input name="姓名" required placeholder="怎麼稱呼你？"
+                /></label>
+                <label
+                  >Email<input
+                    name="Email"
+                    type="email"
+                    required
+                    placeholder="you@example.com"
+                /></label>
+              </div>
+              <label
+                >服務項目
+                <select id="service" name="服務項目">
+                  <option data-key="ziwei">紫微命理諮詢</option>
+                  <option data-key="ai">AI 數位顧問</option>
+                  <option data-key="both">兩者都想了解</option>
+                  <option data-key="other">其他合作／邀約</option>
+                </select>
+              </label>
+              <!-- <label>偏好方式
+              <select name="偏好方式">
+                <option>線上（Google Meet）</option>
+                <option>實體</option>
+              </select>
+            </label> -->
+              <label
+                >想聊的內容<textarea
+                  name="內容"
+                  rows="5"
+                  placeholder=""
+                ></textarea>
+              </label>
+              <button class="btn" type="submit">送出預約</button>
+              <small style="color: var(--muted)"
+                >※ 目前送出會開啟 Email 寄信，之後可串接 Google 表單或
+                Formspree<span class="todo">待設定</span></small
+              >
+            </form>
+
+            <div class="reveal">
+              <div
+                class="photo"
+                data-slot="照片位置：聯絡頁形象照"
+                style="margin-bottom: 32px"
+              >
+                <img src="assets/img/photo-2.jpg" alt="（待替換）形象照" />
+              </div>
+              <ul class="contact-list">
+                <!-- <li><div class="card-icon">✉️</div><div><strong>Email</strong><br><a href="mailto:hello@example.com">hello@example.com</a> <span class="todo">待替換</span></div></li> -->
+                <li>
+                  <div class="card-icon">💬</div>
+                  <div>
+                    <strong>LINE 官方帳號</strong><br />
+                    <a
+                      href="https://lin.ee/U0YWXhv"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >@226sbnoo</a
+                    >
+                  </div>
+                </li>
+                <!-- <li><div class="card-icon">📷</div><div><strong>Instagram</strong><br>@yourinstagram <span class="todo">待替換</span></div></li> -->
+                <!-- <li><div class="card-icon">📍</div><div><strong>實體諮詢地點</strong><br>台北市（預約後提供詳細地址）<span class="todo">待替換</span></div></li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"></footer>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

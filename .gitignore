@@ -1,0 +1,32 @@
+# Claude Code 本機設定
+.claude/
+
+# 機密與環境變數
+.env
+.env.*
+*.key
+*.pem
+
+# 內部草稿與客戶資料
+待替換清單.md
+drafts/
+private/
+客戶資料/
+
+# 原始照片與設計稿（只把處理過的圖放進 assets/img）
+originals/
+*.psd
+*.ai
+*.zip
+/*.jpg
+/*.jpeg
+/*.png
+
+# 系統與編輯器
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+node_modules/
+*.log

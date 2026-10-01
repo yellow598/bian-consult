@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="45%" r="65%">
+      <stop offset="0" stop-color="#F5F3F7"/>
+      <stop offset="1" stop-color="#DDD6E3"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <!-- 12 palace grid -->
+  <g fill="none" stroke="#9A8DA6" stroke-width="2" opacity=".7">
+    <rect x="200" y="100" width="400" height="400"/>
+    <path d="M300 100V500M400 100V200M400 400V500M500 100V500M200 200H600M200 400H600M200 300H300M500 300H600"/>
+  </g>
+  <rect x="300" y="200" width="200" height="200" fill="#ECE8EF" stroke="#9A8DA6" stroke-width="2"/>
+  <circle cx="400" cy="300" r="62" fill="none" stroke="#6A5E77" stroke-width="2"/>
+  <circle cx="400" cy="300" r="40" fill="none" stroke="#B9AEC3" stroke-width="2" stroke-dasharray="4 6"/>
+  <path d="M400 262 L408 292 L438 300 L408 308 L400 338 L392 308 L362 300 L392 292Z" fill="#6A5E77"/>
+  <g fill="#6A5E77">
+    <circle cx="250" cy="150" r="5"/><circle cx="350" cy="140" r="3"/><circle cx="450" cy="160" r="4"/>
+    <circle cx="550" cy="150" r="5"/><circle cx="560" cy="250" r="3"/><circle cx="540" cy="350" r="4"/>
+    <circle cx="550" cy="450" r="5"/><circle cx="450" cy="440" r="3"/><circle cx="350" cy="455" r="4"/>
+    <circle cx="250" cy="450" r="5"/><circle cx="240" cy="350" r="3"/><circle cx="255" cy="250" r="4"/>
+  </g>
+  <g fill="#fff" opacity=".9">
+    <circle cx="90" cy="80" r="2"/><circle cx="700" cy="90" r="3"/><circle cx="730" cy="520" r="2"/>
+    <circle cx="80" cy="500" r="3"/><circle cx="130" cy="300" r="2"/><circle cx="680" cy="300" r="2"/>
+  </g>
+</svg>
