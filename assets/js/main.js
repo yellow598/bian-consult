@@ -9,31 +9,33 @@ const SITE = {
   // instagram: "https://instagram.com/", // （待替換）
 };
 
+// 連結不帶 .html（GitHub Pages 會自動對應到同名的 .html 檔）；首頁用 "./"
 const NAV = [
-  { href: "index.html", label: "首頁" },
-  { href: "about.html", label: "關於我" },
-  { href: "digitalconsultant.html", label: "AI 數位顧問" },
-  { href: "lifemap.html", label: "紫微命理" },
+  { key: "index", href: "./", label: "首頁" },
+  { key: "about", href: "about", label: "關於我" },
+  { key: "digitalconsultant", href: "digitalconsultant", label: "AI 數位顧問" },
+  { key: "lifemap", href: "lifemap", label: "紫微命理" },
 ];
 
+// 取得目前頁面的代號（網址有無 .html 都能判斷；空字串代表首頁）
 function currentPage() {
-  const file = location.pathname.split("/").pop();
-  return file === "" ? "index.html" : file;
+  const file = location.pathname.split("/").pop().replace(/\.html$/, "");
+  return file === "" ? "index" : file;
 }
 
 function renderHeader() {
   const page = currentPage();
   const links = NAV.map(
     (n) =>
-      `<a href="${n.href}" class="${n.href === page ? "active" : ""}">${n.label}</a>`,
+      `<a href="${n.href}" class="${n.key === page ? "active" : ""}">${n.label}</a>`,
   ).join("");
   return `
   <div class="container">
-    <a class="logo" href="index.html">${SITE.brand}<small>${SITE.brandSub}</small></a>
+    <a class="logo" href="./">${SITE.brand}<small>${SITE.brandSub}</small></a>
     <button class="nav-toggle" aria-label="開啟選單" aria-expanded="false">☰</button>
     <nav class="nav">
       ${links}
-      <a class="btn ${page === "contact.html" ? "active" : ""}" href="contact.html">預約諮詢</a>
+      <a class="btn ${page === "contact" ? "active" : ""}" href="contact">預約諮詢</a>
     </nav>
   </div>`;
 }
@@ -49,14 +51,14 @@ function renderFooter() {
       <div>
         <h4>服務</h4>
         <ul>
-          <li><a href="digitalconsultant.html">AI 數位顧問</a></li>
-          <li><a href="lifemap.html">紫微命理諮詢</a></li>
+          <li><a href="digitalconsultant">AI 數位顧問</a></li>
+          <li><a href="lifemap">紫微命理諮詢</a></li>
         </ul>
       </div>
       <div>
         <h4>聯絡</h4>
         <ul>
-          <li><a href="contact.html">預約諮詢</a></li>
+          <li><a href="contact">預約諮詢</a></li>
           <li><a href="https://lin.ee/U0YWXhv" target="_blank" rel="noopener noreferrer">${SITE.line}</a></li>
         </ul>
       </div>
@@ -102,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     location.href = `mailto:${SITE.email}?subject=${encodeURIComponent("預約諮詢：" + d.get("服務項目"))}&body=${encodeURIComponent(body)}`;
   });
 
-  // 從服務頁帶入預選項目 contact.html?service=ziwei
+  // 從服務頁帶入預選項目 contact?service=ziwei
   const svc = new URLSearchParams(location.search).get("service");
   const select = document.querySelector("#service");
   if (svc && select) {
