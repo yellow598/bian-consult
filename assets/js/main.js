@@ -1,6 +1,17 @@
 /* =========================================================
    共用頁首 / 頁尾（改這裡，五個頁面會一起更新）
    ========================================================= */
+// 網址若帶 .html（舊連結、書籤、直接輸入），在網址列改成乾淨的寫法（不會重新載入頁面）
+(function cleanUrl() {
+  if (location.protocol === "file:") return;
+  const clean = location.pathname
+    .replace(/(^|\/)index\.html$/, "$1")
+    .replace(/\.html$/, "");
+  if (clean !== location.pathname) {
+    history.replaceState(null, "", clean + location.search + location.hash);
+  }
+})();
+
 const SITE = {
   brand: "比安學姊",
   brandSub: "AI 數位顧問 × 紫微命理",
