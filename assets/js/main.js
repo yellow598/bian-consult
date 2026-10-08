@@ -57,7 +57,7 @@ function renderFooter() {
     <div class="cols">
       <div>
         <h4>${SITE.brand}</h4>
-        <p>把複雜的事情拆清楚<br>找到適合你的下一步</p>
+        <p>左手寫程式，右手排命盤<br>用工程師的理性，讀懂星盤裡的感性</p>
       </div>
       <div>
         <h4>服務</h4>
@@ -105,6 +105,13 @@ document.addEventListener("DOMContentLoaded", () => {
     { threshold: 0.12 },
   );
   document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+  // 從其他頁連到 #錨點（例如 lifemap#reviews）：等頁首與字型載入後再捲到定位
+  if (location.hash) {
+    window.addEventListener("load", () => {
+      document.querySelector(location.hash)?.scrollIntoView({ behavior: "instant" });
+    });
+  }
 
   // 聯絡表單（目前無後端：改用開啟 Email 寄送；之後可換 Formspree / Google 表單）
   const form = document.querySelector("#contact-form");

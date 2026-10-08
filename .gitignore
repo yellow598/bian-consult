@@ -30,3 +30,6 @@ desktop.ini
 .idea/
 node_modules/
 *.log
+
+# 客戶回饋原始資料（含個資，不公開）
+客戶回饋.xlsx

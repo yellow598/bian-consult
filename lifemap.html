@@ -14,27 +14,35 @@
   <header class="site-header"></header>
 
   <main>
-    <section class="hero hero--wide hero--brand">
+    <section class="hero hero--center">
       <div class="container">
-        <div class="hero-card reveal">
+        <div class="reveal">
           <span class="eyebrow">Life Map</span>
           <h1>紫微命理諮詢</h1>
-          <p class="lead">命盤不是寫好的劇本，而是一張認識自己的星圖。讓我們一起看見你的天賦、盲點與此刻最適合的方向。</p>
+          <p class="lead">
+            命盤像一張專屬於你的人生地圖<br />記錄著你的特質、模式與人生節奏
+          </p>
+          <p class="lead">
+            我會陪你一起讀懂它<br />在轉折點上，找到此刻適合你的方向
+          </p>
+          <ul class="topic-pills" aria-label="可以諮詢的主題">
+            <li>人生方向</li>
+            <li>職涯規劃</li>
+            <li>感情與人際關係</li>
+            <li>流年節奏</li>
+          </ul>
           <div class="btn-row">
             <a class="btn" href="contact?service=ziwei">預約解盤</a>
             <a class="btn btn--ghost" href="#plans">查看方案</a>
           </div>
-        </div>
-        <div class="hero-img reveal">
-          <img src="assets/img/ziwei-stars.svg" alt="紫微十二宮命盤示意圖">
         </div>
       </div>
     </section>
 
     <section class="section section--alt">
       <div class="container split">
-        <div class="photo reveal" data-slot="照片位置：解盤情境">
-          <img src="assets/img/photo-2.jpg" alt="（待替換）解盤情境照片">
+        <div class="photo reveal">
+          <img src="assets/img/ziwei-why.jpg" alt="一個人站在海邊山丘上，望著粉紫色的天空與遠方">
         </div>
         <div class="reveal">
           <span class="eyebrow">Why</span>
@@ -55,32 +63,90 @@
         <div class="center reveal">
           <span class="eyebrow">Plans</span>
           <h2>諮詢方案</h2>
-          <p class="lead">提供線上（Google Meet）、實體（台北地區）、純文字（I 人友善）諮詢，並附親手整理重點紀錄，你不需要額外筆記<span class="todo">價格為範例</span></p>
+          <p class="lead">
+            每次諮詢前，我會花 1～2 天細讀你的命盤和問題<br />
+            我看盤不算快，但每一張都很認真看<br />
+            因為我真心想幫每位來找我的夥伴，解開心裡的卡關
+          </p>
+          <p class="lead plans-note">
+            諮詢後會提供我親手整理的重點紀錄，不是 AI 產的<br />
+            你不用自己做筆記，專心聊就好
+          </p>
         </div>
-        <div class="grid-2" style="margin-top:56px">
+        <div class="grid-3 plans" style="margin-top:56px">
           <div class="card plan reveal">
-            <div class="card-icon">🌙</div>
-            <h3>線上/實體<br>一對一諮詢</h3>
-            <div class="price">NT$ 3,600 <small>／ 90 分鐘</small></div>
+            <div class="card-icon">💻</div>
+            <h3>線上<br>一對一諮詢</h3>
+            <div class="price">NT$ 2,800 <small>／ 90 分鐘</small></div>
             <ul>
-              <li>線上主要使用 Google Meet，只要可以語音通話即可，也可以討論使用 LINE 或其他通訊軟體</li>
-              <li>實體面談地點以台北為主</li>
+              <li>主要使用 Google Meet，能語音通話即可</li>
+              <li>也可討論改用 LINE 或其他通訊軟體</li>
+              <li>不限地區，在家就能諮詢</li>
             </ul>
             <a class="btn btn--ghost" href="contact?service=ziwei">預約此方案</a>
           </div>
           <div class="card plan featured reveal">
-            <div class="card-icon">✨</div>
-            <h3>文字版<br>個人命盤問題解析</h3>
-            <div class="price">NT$ 1,000 <small>／ 1 題</small></div>
+            <div class="card-icon">🌙</div>
+            <h3>實體<br>一對一諮詢</h3>
+            <div class="price">NT$ 3,000 <small>／ 90 分鐘</small></div>
             <ul>
-              <li>I人友善，適合喜歡透過閱讀文字思考的人</li>
+              <li>面對面對談，地點以台北為主</li>
+              <li>適合想深入來回討論的複雜問題</li>
             </ul>
             <a class="btn" href="contact?service=ziwei">預約此方案</a>
+          </div>
+          <div class="card plan reveal">
+            <div class="card-icon">✨</div>
+            <h3>文字版<br>個人命盤問題解析</h3>
+            <div class="price">NT$ 900 <small>／ 一題</small></div>
+            <ul>
+              <li>I 人友善，適合喜歡透過閱讀思考的人</li>
+              <li>5 個工作天內以 Email／LINE 提供書面分析</li>
+              <li>可保留內容反覆閱讀</li>
+            </ul>
+            <a class="btn btn--ghost" href="contact?service=ziwei">預約此方案</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--alt">
+    <section class="section section--alt" id="reviews">
+      <div class="container">
+        <div class="center reveal" style="margin-bottom:48px">
+          <span class="eyebrow">Kind words</span>
+          <h2>諮詢過的人這樣說</h2>
+          <p class="lead">每一則都是諮詢後收到的真實回饋，經同意後分享</p>
+        </div>
+        <div class="reviews">
+          <figure class="review reveal">
+            <span class="review-topic">感情・財運</span>
+            <blockquote><strong>「就像有張自己專屬的地圖，趨吉避凶，徐徐前進」</strong><p>近來心有迷茫，家庭、小孩、夫妻相處等等，除了看書自救，也好奇玄學的建議。感謝老師系統性地幫我釐清問題，從事前的提問，到會中專注解惑、分析建議，對自己有很深刻的幫助，就像有張自己專屬的地圖，趨吉避凶，徐徐前進</p></blockquote>
+            <figcaption>醫院護理人員</figcaption>
+            <details class="review-shot"><summary>看原始回饋截圖</summary><img src="assets/img/reviews/review-1.jpg" alt="醫院護理人員的回饋截圖" loading="lazy"></details>
+          </figure>
+          <figure class="review reveal">
+            <span class="review-topic">感情・創業</span>
+            <blockquote><strong>「廣度就是我的創造力跟靈感連結」</strong><p>妳的解讀很準喔，從女生的視角去解讀我的命盤，給了我很多很多的「很棒」。也謝謝妳跟我說興趣很廣是好的，我相信我不只是做深、還要廣，廣度就是我的創造力跟靈感連結，我才能做出跟別人不一樣的服務跟作品</p></blockquote>
+            <figcaption>平面設計師</figcaption>
+            <details class="review-shot"><summary>看原始回饋截圖</summary><img src="assets/img/reviews/review-2.jpg" alt="平面設計師的回饋截圖" loading="lazy"></details>
+          </figure>
+          <figure class="review reveal">
+            <span class="review-topic">事業・健康・財運</span>
+            <blockquote><strong>「像朋友聊天一樣，心裡踏實了不少」</strong><p>跟學姊聊完很放鬆，像朋友聊天一樣～工作、健康、財運都聊得很清楚，心裡踏實了不少，也比較知道怎麼調整自己的步調</p></blockquote>
+            <figcaption>餐飲服務人員</figcaption>
+            <details class="review-shot"><summary>看原始回饋截圖</summary><img src="assets/img/reviews/review-3.jpg" alt="餐飲服務人員的回饋截圖" loading="lazy"></details>
+          </figure>
+          <figure class="review reveal">
+            <span class="review-topic">紫微牌卡・流年運勢</span>
+            <blockquote><strong>「放下了各種糾結，就順利找到了」</strong><p>後來重新看了妳的建議文字，覺得也是符合的。就是因為放下了各種糾結，就順利找到新的月子中心了，而且價格和舒適度都令人滿意</p></blockquote>
+            <figcaption>電子業專案經理</figcaption>
+            <details class="review-shot"><summary>看原始回饋截圖</summary><img src="assets/img/reviews/review-4-1.jpg" alt="電子業專案經理的回饋截圖之一" loading="lazy"><img src="assets/img/reviews/review-4-2.jpg" alt="電子業專案經理的回饋截圖之二" loading="lazy"></details>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="container">
         <div class="center reveal" style="margin-bottom:56px">
           <span class="eyebrow">Process</span>
@@ -96,7 +162,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section--alt">
       <div class="container">
         <div class="center reveal" style="margin-bottom:48px">
           <span class="eyebrow">FAQ</span>
@@ -121,7 +187,7 @@
       </div>
     </section>
 
-    <section class="section" style="padding-top:0">
+    <section class="section">
       <div class="container">
         <div class="cta-band reveal">
           <h2>讓星盤陪你，看見此刻的自己</h2>
@@ -133,6 +199,6 @@
   </main>
 
   <footer class="site-footer"></footer>
-  <script src="assets/js/main.js?v=2"></script>
+  <script src="assets/js/main.js?v=5"></script>
 </body>
 </html>
