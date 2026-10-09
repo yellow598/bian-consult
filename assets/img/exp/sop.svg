@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#EEF0EC"/>
+  <circle cx="630" cy="300" r="140" fill="#E3ECE3"/>
+  <!-- SOP 夾板 -->
+  <rect x="120" y="90" width="300" height="440" rx="20" fill="#fff" stroke="#5E7D64" stroke-width="3"/>
+  <rect x="215" y="68" width="110" height="44" rx="12" fill="#5E7D64"/>
+  <rect x="250" y="80" width="40" height="10" rx="5" fill="#EEF0EC"/>
+  <rect x="150" y="140" width="140" height="12" rx="6" fill="#5E7D64"/>
+  <g fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="170" cy="200" r="16" fill="#A4BDA8" stroke="none"/><path d="M162 200 l6 6 l11 -12"/>
+    <circle cx="170" cy="270" r="16" fill="#A4BDA8" stroke="none"/><path d="M162 270 l6 6 l11 -12"/>
+    <circle cx="170" cy="340" r="16" fill="#A4BDA8" stroke="none"/><path d="M162 340 l6 6 l11 -12"/>
+  </g>
+  <circle cx="170" cy="410" r="15" fill="#fff" stroke="#A4BDA8" stroke-width="3"/>
+  <circle cx="170" cy="470" r="15" fill="#fff" stroke="#A4BDA8" stroke-width="3"/>
+  <g fill="#C9D6CA">
+    <rect x="200" y="190" width="170" height="8" rx="4"/><rect x="200" y="260" width="150" height="8" rx="4"/><rect x="200" y="330" width="170" height="8" rx="4"/><rect x="200" y="400" width="130" height="8" rx="4"/><rect x="200" y="460" width="160" height="8" rx="4"/>
+  </g>
+  <g fill="#E3ECE3">
+    <rect x="200" y="206" width="110" height="6" rx="3"/><rect x="200" y="276" width="130" height="6" rx="3"/><rect x="200" y="346" width="90" height="6" rx="3"/><rect x="200" y="416" width="110" height="6" rx="3"/>
+  </g>
+  <!-- 交給 AI，或交給同事 -->
+  <g fill="none" stroke="#A4BDA8" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round">
+    <path d="M430 250 C490 250 500 186 560 186"/>
+    <path d="M430 370 C490 370 500 430 556 430"/>
+  </g>
+  <!-- AI 小機器人 -->
+  <line x1="630" y1="112" x2="630" y2="136" stroke="#5E7D64" stroke-width="3"/>
+  <circle cx="630" cy="106" r="9" fill="#E9CBB0" stroke="#5E7D64" stroke-width="3"/>
+  <rect x="570" y="136" width="120" height="100" rx="26" fill="#fff" stroke="#5E7D64" stroke-width="3"/>
+  <circle cx="606" cy="180" r="10" fill="#5E7D64"/><circle cx="654" cy="180" r="10" fill="#5E7D64"/>
+  <path d="M614 206 q16 12 32 0" fill="none" stroke="#A4BDA8" stroke-width="4" stroke-linecap="round"/>
+  <!-- 同事 -->
+  <circle cx="630" cy="392" r="34" fill="#E9CBB0" stroke="#5E7D64" stroke-width="3"/>
+  <path d="M568 486 a62 58 0 0 1 124 0 Z" fill="#A4BDA8" stroke="#5E7D64" stroke-width="3" stroke-linejoin="round"/>
+  <g fill="#B3BEB2"><circle cx="70" cy="120" r="6"/><circle cx="740" cy="540" r="7"/><circle cx="470" cy="80" r="5"/></g>
+</svg>

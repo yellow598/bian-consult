@@ -11,28 +11,33 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css?v=2" />
   </head>
   <body class="theme-ai">
     <header class="site-header"></header>
 
     <main>
-      <section class="hero hero--wide hero--brand">
+      <section class="hero hero--center">
         <div class="container">
-          <div class="hero-card reveal">
+          <div class="reveal">
             <span class="eyebrow">AI Digital Consulting</span>
             <h1>AI 數位顧問</h1>
             <p class="lead">
-              不用懂程式，也能讓 AI 成為你的得力助手。我做了 7
-              年的系統開發，擅長把模糊的需求，拆成真的跑得起來的流程
+              不用懂程式，也能讓 AI 成為你的得力助手<br />7 年系統開發經驗，我最懂被瑣事綁住的工作日
             </p>
+            <p class="lead">
+              把那些讓你頭痛又繁瑣的事務交給我<br />我會用 AI 幫你優化流程，把時間還給真正重要的事
+            </p>
+            <ul class="topic-pills" aria-label="可以諮詢的主題">
+              <li>重複性工作自動化</li>
+              <li>AI 工具導入</li>
+              <li>文件與報表整理</li>
+              <li>團隊 AI 培訓</li>
+            </ul>
             <div class="btn-row">
               <a class="btn" href="contact?service=ai">預約免費初談</a>
               <a class="btn btn--ghost" href="#experience">看看我做過什麼</a>
             </div>
-          </div>
-          <div class="hero-img reveal">
-            <img src="assets/img/ai-flow.svg" alt="AI 自動化流程示意圖" />
           </div>
         </div>
       </section>
@@ -97,141 +102,107 @@
 
           <div class="stats" style="margin-top: 48px">
             <div class="stat reveal">
-              <strong>近 7 年</strong><span>系統開發與維護</span>
+              <strong>7 年</strong><span>系統開發與維護</span>
             </div>
             <div class="stat reveal">
-              <strong>5 家</strong><span>公司、跨產業的專案經驗</span>
+              <strong>5 家</strong><span>跨產業的專案經驗</span>
             </div>
             <div class="stat reveal">
-              <strong>3 人</strong><span>開發團隊的帶領經驗</span>
+              <strong>5 人</strong><span>開發團隊的帶領經驗</span>
             </div>
           </div>
 
-          <div class="grid-3" style="margin-top: 32px">
-            <article class="card exp reveal">
-              <div class="card-icon">💳</div>
-              <h3>金流與會員系統</h3>
-              <p>
-                串接第三方金流 API，開發平台與金流系統之間的
-                API；規劃供應商、會員、訂單、稽核、營運報表等多角色後台
-              </p>
-              <div class="exp-help">
-                <strong>→ 所以我能幫你</strong>
-                <p>
-                  把散在不同平台的訂單、會員、收款資料串起來，報表不用再手動拼湊
-                </p>
+          <div class="case-list">
+            <article class="case reveal">
+              <figure class="case-img case-img--wide">
+                <img src="assets/img/exp/game-admin.webp" alt="遊戲公司管理後台：訂單、收款金額、會員數與訂單來源統計" loading="lazy" />
+                <figcaption>※ 無法公開公司內部系統，圖片為情境圖</figcaption>
+              </figure>
+              <div class="case-body">
+                <span class="case-num">01</span>
+                <h3>訂單、收款、會員，每一筆都對得上</h3>
+                <p>我負責過遊戲公司收款系統。客人在網站上付的每一筆錢，要經過金流公司，再回到平台入帳；而供應商、會員、訂單、稽核、營運報表，每個角色要看的資料都不一樣。我的工作，就是讓每一筆錢從哪裡來、去了哪裡，都清清楚楚、查得到。</p>
+                <div class="exp-help">
+                  <strong>→ 所以我能幫你</strong>
+                  <p>如果你每個月都要從好幾個平台匯出資料，再一格一格貼進 Excel 對帳，我可以幫你把這些資料串在一起，報表自動產生，不用再熬夜拼湊。</p>
+                </div>
               </div>
-              <ul class="tags">
-                <li>PHP</li>
-                <li>Laravel</li>
-                <li>CodeIgniter</li>
-                <li>MySQL</li>
-                <li>Redis</li>
-              </ul>
             </article>
 
-            <article class="card exp reveal">
-              <div class="card-icon">💬</div>
-              <h3>即時客服系統</h3>
-              <p>
-                參與開發即時客服系統的功能與資料庫規劃，並撰寫 API
-                與系統環境設定文件
-              </p>
-              <div class="exp-help">
-                <strong>→ 所以我能幫你</strong>
-                <p>
-                  整理客人最常問的問題，設計「AI
-                  先擬回覆、你只要確認」的客服流程
-                </p>
+            <article class="case reveal">
+              <div class="case-img">
+                <img src="assets/img/exp/chat.svg" alt="AI 學會你的回答方式、幫你回覆客人的客服示意圖" loading="lazy" />
               </div>
-              <ul class="tags">
-                <li>Laravel</li>
-                <li>Redis</li>
-                <li>MySQL / Oracle</li>
-                <li>AWS</li>
-                <li>Docker</li>
-                <li>K8S</li>
-              </ul>
+              <div class="case-body">
+                <span class="case-num">02</span>
+                <h3>客人一直問同樣的問題？</h3>
+                <p>我參與過一套線上即時客服系統的開發。從客人送出一則訊息、客服人員接手回覆，到每段對話怎麼保存、之後怎麼查，都要事先想清楚。也因為這樣，我很明白：客服最累的往往不是難題，而是一整天重複回答同樣的問題。</p>
+                <div class="exp-help">
+                  <strong>→ 所以我能幫你</strong>
+                  <p>我會先把客人最常問的問題整理出來，讓 AI 學會你平常怎麼回答，幫你回覆客人。遇到它沒看過的問題，它會馬上通知你，交給你親自回。簡單的交給 AI，真正需要你的，一則也不會漏掉。</p>
+                </div>
+              </div>
             </article>
 
-            <article class="card exp reveal">
-              <div class="card-icon">📊</div>
-              <h3>即時監控與數據分析</h3>
-              <p>
-                開發流量監控平台，即時統計並以圖表呈現連線狀態，讓監控人員第一時間發現異常；也參與大數據分析系統開發，熟悉
-                CTR、CVR、ROAS 等行銷指標
-              </p>
-              <div class="exp-help">
-                <strong>→ 所以我能幫你</strong>
-                <p>
-                  決定該看哪些數字，把它們自動彙整成報表或儀表板，有異常時馬上知道
-                </p>
+            <article class="case reveal">
+              <figure class="case-img case-img--wide">
+                <img src="assets/img/exp/monitor.webp" alt="系統即時監控畫面：資源使用率曲線圖、網路流量與告警通知" loading="lazy" />
+                <figcaption>※ 無法公開公司內部系統，圖片為情境圖</figcaption>
+              </figure>
+              <div class="case-body">
+                <span class="case-num">03</span>
+                <h3>數字一有異常，馬上知道</h3>
+                <p>我做過企業網站流量即時監控，把系統的即時狀況畫成圖表，讓 24 小時值班的人一眼就看出哪裡不對勁。也參與過分析廣告成效的系統，每天和點擊率、轉換率、廣告投報率這些數字相處。</p>
+                <div class="exp-help">
+                  <strong>→ 所以我能幫你</strong>
+                  <p>報表不該花你一個小時才看得懂。我會陪你一起討論，怎麼把報表做成幾分鐘就能看懂的樣子，再讓它每天自動整理好；數字一有異常，就主動通知你。</p>
+                </div>
               </div>
-              <ul class="tags">
-                <li>PHP</li>
-                <li>Redis</li>
-                <li>Nginx</li>
-                <li>MySQL</li>
-              </ul>
             </article>
 
-            <article class="card exp reveal">
-              <div class="card-icon">🎯</div>
-              <h3>會員、點數與活動後台</h3>
-              <p>
-                開發企業內部員工 App
-                與後台，包含會員、點數、活動管理，並對接客戶既有的會員系統；也做過廣告區塊與內容討論區的後台
-              </p>
-              <div class="exp-help">
-                <strong>→ 所以我能幫你</strong>
-                <p>
-                  把會員經營、活動、內容上架這些例行工作，整理成固定流程，再交給工具自動化
-                </p>
+            <article class="case reveal">
+              <div class="case-img">
+                <img src="assets/img/exp/member.svg" alt="活動、點數、會員資料自動循環運作的示意圖" loading="lazy" />
               </div>
-              <ul class="tags">
-                <li>CodeIgniter</li>
-                <li>JavaScript</li>
-                <li>jQuery</li>
-                <li>MySQL</li>
-              </ul>
+              <div class="case-body">
+                <span class="case-num">04</span>
+                <h3>會員、點數、活動，不用再靠人工盯</h3>
+                <p>我幫一家大型連鎖餐飲做過給員工用的 App 和管理後台：會員資料、點數發放、活動管理都在裡面，還要和客戶原本的會員系統接在一起。也做過廣告版位和討論區的管理後台，讓營運同事自己就能上架內容，不必每次都找工程師。</p>
+                <div class="exp-help">
+                  <strong>→ 所以我能幫你</strong>
+                  <p>發點數、辦活動、上架內容，這些每週都在重複的例行工作，我會先幫你整理成固定的步驟，再交給工具自動完成，你只要確認結果。</p>
+                </div>
+              </div>
             </article>
 
-            <article class="card exp reveal">
-              <div class="card-icon">📝</div>
-              <h3>流程、文件與 SOP</h3>
-              <p>規劃團隊從開發、測試到正式上線的部署流程；制定開發文件格式</p>
-              <div class="exp-help">
-                <strong>→ 所以我能幫你</strong>
-                <p>
-                  把複雜的流程寫成 SOP。這是交給
-                  AI、或交接給同事之前，最重要的一步
-                </p>
+            <article class="case reveal">
+              <div class="case-img">
+                <img src="assets/img/exp/sop.svg" alt="把工作步驟寫成 SOP，交給 AI 或同事的示意圖" loading="lazy" />
               </div>
-              <ul class="tags">
-                <li>Git Flow</li>
-                <li>GitLab</li>
-                <li>Axure</li>
-                <li>技術文件</li>
-              </ul>
+              <div class="case-body">
+                <span class="case-num">05</span>
+                <h3>把「只有我會」變成人人都會的 SOP</h3>
+                <p>在開發團隊裡，我負責規劃一個新功能從開發、測試到正式上線的每個步驟，也訂下團隊寫文件的格式。目的很簡單：不管換誰接手，照著做都不會出錯。</p>
+                <div class="exp-help">
+                  <strong>→ 所以我能幫你</strong>
+                  <p>很多工作卡在「只有某個人知道怎麼做」。我會幫你把這些步驟寫成清楚的 SOP。這是把工作交給 AI、或交接給同事之前，最重要的一步。</p>
+                </div>
+              </div>
             </article>
 
-            <article class="card exp reveal">
-              <div class="card-icon">🤝</div>
-              <h3>帶團隊與跨部門溝通</h3>
-              <p>
-                擔任 3 人開發團隊的 team
-                lead，負責需求分析、時程評估、任務分配與進度追蹤；參與主管會議與跨部門溝通，協助
-                PM 與客戶確認產品功能
-              </p>
-              <div class="exp-help">
-                <strong>→ 所以我能幫你</strong>
-                <p>把需求講清楚，也幫你判斷時程與報價合不合理</p>
+            <article class="case reveal">
+              <div class="case-img">
+                <img src="assets/img/exp/team.svg" alt="帶領團隊、排定時程與溝通的示意圖" loading="lazy" />
               </div>
-              <ul class="tags">
-                <li>需求分析</li>
-                <li>專案管理</li>
-                <li>時程評估</li>
-              </ul>
+              <div class="case-body">
+                <span class="case-num">06</span>
+                <h3>幫你把需求說清楚，不怕被當外行</h3>
+                <p>我帶過 5 人的開發團隊。了解客戶到底想要什麼、估算要花多少時間、分配工作、追進度，都是我的日常。我也常在主管會議和跨部門討論裡，幫忙在 PM、客戶和工程師之間來回確認，讓大家說的是同一件事。</p>
+                <div class="exp-help">
+                  <strong>→ 所以我能幫你</strong>
+                  <p>想找外包、買系統，卻不知道怎麼開口，也看不懂報價？我可以幫你把需求講清楚，也幫你判斷時程和價格合不合理。</p>
+                </div>
+              </div>
             </article>
           </div>
         </div>
@@ -293,25 +264,24 @@
 
       <!-- 情境示意（尚無真實客戶案例，誠實標示） -->
       <section class="section">
-        <div class="container split">
-          <div class="reveal">
+        <div class="container start-plan">
+          <div class="center reveal">
             <span class="eyebrow">How we might start</span>
-            <h2>如果你是一人公司，我們可能會這樣開始</h2>
+            <h2>小團隊或一人公司，我們會這樣開始</h2>
+          </div>
+          <div class="card reveal">
             <ul class="checklist">
               <li>
-                把你每週重複在做的事列出來，例如回訊息、整理報名表、做帳務對帳
+                把你和團隊每週重複在做的事列出來，例如回客人訊息、整理訂單或報名表、對帳
               </li>
-              <li>挑出最花時間、規則也最清楚的一件，先從它下手</li>
-              <li>用 AI 加上你現有的工具，做出第一個小流程</li>
-              <li>寫成一頁 SOP，之後你自己就能調整，不用一直找人</li>
+              <li>挑出最花時間、做法也最固定的一件，先從它下手</li>
+              <li>用 AI 搭配你們現在就在用的工具，做出第一個小流程</li>
+              <li>寫成一頁 SOP，之後你或同事自己就能調整，不用一直找人</li>
             </ul>
-            <p class="note">
-              ※ 以上為情境示意，實際內容會依你的工作與工具調整。
-            </p>
           </div>
-          <div class="photo reveal" data-slot="照片位置：顧問工作情境">
-            <img src="assets/img/photo-1.jpg" alt="（待替換）顧問工作照片" />
-          </div>
+          <p class="note center">
+            ※ 以上為示意，實際內容會依你的工作與工具調整。
+          </p>
         </div>
       </section>
 
@@ -319,8 +289,7 @@
         <div class="container">
           <div class="center reveal" style="margin-bottom: 56px">
             <span class="eyebrow">Process</span>
-            <h2>合作流程<span class="todo"
-                >內容為AI範例</span</h2>
+            <h2>合作流程</h2>
           </div>
           <div class="steps">
             <div class="step reveal">

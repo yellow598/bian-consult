@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#EEF0EC"/>
+  <circle cx="400" cy="300" r="150" fill="#E3ECE3"/>
+  <!-- 自動循環箭頭 -->
+  <g fill="none" stroke="#A4BDA8" stroke-width="4" stroke-linecap="round">
+    <path d="M310 230 A120 120 0 0 1 490 230"/>
+    <path d="M490 230 l-2 -24 M490 230 l-24 -1"/>
+    <path d="M490 372 A120 120 0 0 1 310 372"/>
+    <path d="M310 372 l2 24 M310 372 l24 1"/>
+  </g>
+  <!-- 行事曆（活動） -->
+  <rect x="90" y="90" width="210" height="200" rx="18" fill="#fff" stroke="#5E7D64" stroke-width="3"/>
+  <path d="M91.5 140 V108 a16.5 16.5 0 0 1 16.5 -16.5 H282 a16.5 16.5 0 0 1 16.5 16.5 V140 Z" fill="#5E7D64"/>
+  <g fill="#E3ECE3">
+    <rect x="114" y="160" width="30" height="26" rx="6"/><rect x="154" y="160" width="30" height="26" rx="6"/><rect x="194" y="160" width="30" height="26" rx="6"/><rect x="234" y="160" width="30" height="26" rx="6"/>
+    <rect x="114" y="198" width="30" height="26" rx="6"/><rect x="194" y="198" width="30" height="26" rx="6"/><rect x="234" y="198" width="30" height="26" rx="6"/>
+    <rect x="114" y="236" width="30" height="26" rx="6"/><rect x="154" y="236" width="30" height="26" rx="6"/><rect x="194" y="236" width="30" height="26" rx="6"/>
+  </g>
+  <rect x="154" y="198" width="30" height="26" rx="6" fill="#E9CBB0"/>
+  <!-- 禮物（點數兌換） -->
+  <path d="M610 110 c-30 -40 -60 -10 -30 0 M610 110 c30 -40 60 -10 30 0" fill="none" stroke="#5E7D64" stroke-width="3" stroke-linecap="round"/>
+  <rect x="530" y="140" width="160" height="120" rx="12" fill="#fff" stroke="#5E7D64" stroke-width="3"/>
+  <rect x="516" y="110" width="188" height="40" rx="10" fill="#A4BDA8" stroke="#5E7D64" stroke-width="3"/>
+  <rect x="598" y="111.5" width="24" height="147" fill="#E9CBB0"/>
+  <!-- 會員卡 -->
+  <rect x="280" y="390" width="240" height="140" rx="18" fill="#fff" stroke="#5E7D64" stroke-width="3"/>
+  <circle cx="335" cy="460" r="30" fill="#E3ECE3" stroke="#A4BDA8" stroke-width="3"/>
+  <rect x="382" y="436" width="104" height="9" rx="4.5" fill="#A4BDA8"/>
+  <rect x="382" y="456" width="74" height="7" rx="3.5" fill="#C9D6CA"/>
+  <rect x="382" y="476" width="90" height="7" rx="3.5" fill="#C9D6CA"/>
+  <!-- 點數 -->
+  <circle cx="640" cy="430" r="40" fill="#5E7D64"/>
+  <circle cx="606" cy="476" r="34" fill="#A4BDA8" stroke="#fff" stroke-width="3"/>
+  <path d="M640 408 l6.5 13 l14.5 2 l-10.5 10 l2.5 14.5 l-13 -7 l-13 7 l2.5 -14.5 l-10.5 -10 l14.5 -2 Z" fill="#fff"/>
+  <g fill="#B3BEB2"><circle cx="110" cy="420" r="7"/><circle cx="160" cy="520" r="5"/><circle cx="740" cy="320" r="6"/></g>
+</svg>

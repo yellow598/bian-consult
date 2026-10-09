@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#EEF0EC"/>
+  <circle cx="130" cy="470" r="110" fill="#E3ECE3"/>
+  <!-- 對話視窗 -->
+  <rect x="140" y="80" width="520" height="440" rx="26" fill="#fff" stroke="#5E7D64" stroke-width="3"/>
+  <path d="M141.5 140 V106 a24.5 24.5 0 0 1 24.5 -24.5 H634 a24.5 24.5 0 0 1 24.5 24.5 V140 Z" fill="#E3ECE3"/>
+  <line x1="141.5" y1="140" x2="658.5" y2="140" stroke="#5E7D64" stroke-width="3"/>
+  <g fill="#A4BDA8"><circle cx="176" cy="111" r="7"/><circle cx="198" cy="111" r="7"/><circle cx="220" cy="111" r="7"/></g>
+  <!-- 客人的提問 -->
+  <circle cx="190" cy="196" r="20" fill="#E9CBB0"/>
+  <rect x="224" y="172" width="250" height="52" rx="20" fill="#EEF0EC"/>
+  <rect x="246" y="188" width="150" height="8" rx="4" fill="#A4BDA8"/>
+  <rect x="246" y="204" width="96" height="6" rx="3" fill="#C9D6CA"/>
+  <!-- AI 先擬好的回覆（虛線框＝草稿） -->
+  <rect x="300" y="256" width="310" height="112" rx="22" fill="#F3F6F2" stroke="#5E7D64" stroke-width="3" stroke-dasharray="10 8"/>
+  <rect x="326" y="284" width="230" height="8" rx="4" fill="#A4BDA8"/>
+  <rect x="326" y="306" width="250" height="8" rx="4" fill="#A4BDA8"/>
+  <rect x="326" y="328" width="160" height="8" rx="4" fill="#A4BDA8"/>
+  <!-- AI 星芒 -->
+  <path d="M628 222 q6 22 28 28 q-22 6 -28 28 q-6 -22 -28 -28 q22 -6 28 -28 Z" fill="#5E7D64"/>
+  <path d="M672 190 q3 10 13 13 q-10 3 -13 13 q-3 -10 -13 -13 q10 -3 13 -13 Z" fill="#A4BDA8"/>
+  <!-- 你只要按確認 -->
+  <rect x="200" y="420" width="150" height="22" rx="11" fill="#EEF0EC"/>
+  <rect x="440" y="404" width="170" height="54" rx="27" fill="#5E7D64"/>
+  <path d="M500 431 l11 11 l22 -24" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- 游標 -->
+  <path d="M582 446 l0 58 l14 -14 l12 24 l12 -6 l-12 -24 l20 0 Z" fill="#fff" stroke="#5E7D64" stroke-width="3" stroke-linejoin="round"/>
+  <g fill="#B3BEB2"><circle cx="720" cy="120" r="7"/><circle cx="90" cy="110" r="5"/><circle cx="720" cy="540" r="6"/></g>
+</svg>
