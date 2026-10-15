@@ -46,7 +46,7 @@ function renderHeader() {
     <button class="nav-toggle" aria-label="開啟選單" aria-expanded="false">☰</button>
     <nav class="nav">
       ${links}
-      <a class="btn ${page === "contact" ? "active" : ""}" href="contact">預約諮詢</a>
+      <a class="btn ${page === "contact" ? "active" : ""}" href="https://lin.ee/U0YWXhv" target="_blank" rel="noopener noreferrer">預約諮詢</a>
     </nav>
   </div>`;
 }
@@ -69,12 +69,12 @@ function renderFooter() {
       <div>
         <h4>聯絡</h4>
         <ul>
-          <li><a href="contact">預約諮詢</a></li>
+          <li><a href="https://forms.gle/4ykbiG6Nf3A6dm2x9" target="_blank" rel="noopener noreferrer">預約諮詢</a></li>
           <li><a href="https://lin.ee/U0YWXhv" target="_blank" rel="noopener noreferrer">${SITE.line}</a></li>
         </ul>
       </div>
     </div>
-    <div class="copy">© ${new Date().getFullYear()} ${SITE.brand}. All rights reserved.</div>
+    <div class="copy">${SITE.brand} Biansis © All rights reserved.</div>
   </div>`;
 }
 

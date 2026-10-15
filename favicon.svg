@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="16" fill="#C4572B"/>
+  <text x="32" y="33" text-anchor="middle" dominant-baseline="central" font-size="40" font-weight="700" font-family="'Noto Sans TC','Microsoft JhengHei','PingFang TC',sans-serif" fill="#FFFFFF">安</text>
+  <path d="M51 21 C44 16.500 43 13 45.500 11.200 C47.800 9.800 50 11 51 13 C52 11 54.200 9.800 56.500 11.200 C59 13 58 16.500 51 21Z" fill="#FFFFFF"/>
+</svg>
