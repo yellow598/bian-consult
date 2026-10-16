@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/style.css?v=22" />
+    <link rel="stylesheet" href="assets/css/style.css?v=55" />
   </head>
   <body class="theme-earth">
     <header class="site-header"></header>
@@ -22,14 +22,21 @@
       <section class="hero">
         <div class="container">
           <div class="reveal">
-            <span class="eyebrow">About me</span>
             <h1>比安學姊</h1>
             <p class="slogan">
               <span>左手寫程式，</span><span>右手排命盤</span><br /><span>用工程師的理性，</span><span>讀懂星盤裡的感性</span>
             </p>
+            <ul class="bio-facts">
+              <li>
+                <span class="bio-badge"><b>7 年</b>軟體工程師</span>
+                <p>習慣把複雜的問題拆成清楚的步驟</p>
+              </li>
+              <li>
+                <span class="bio-badge"><b>2 年</b>學習紫微斗數</span>
+                <p>從命盤裡讀出一個人的特質與節奏</p>
+              </li>
+            </ul>
             <p>
-              做了七年軟體工程師，習慣把複雜的問題拆成清楚的步驟<br />
-              學了兩年紫微斗數，從命盤裡讀出一個人的特質與節奏<br />
               <strong>用 AI 解決工作的複雜，用紫微看懂人生的卡關</strong>
             </p>
             <div class="btn-row">
@@ -38,7 +45,7 @@
             </div>
           </div>
           <div class="hero-img reveal">
-            <img src="assets/img/bian-selfi.jpg" alt="比安學姊個人照" />
+            <img src="assets/img/bian-selfi-2.jpg" alt="比安學姊個人照" />
           </div>
         </div>
       </section>
@@ -47,7 +54,6 @@
       <section class="section section--alt">
         <div class="container">
           <div class="center reveal">
-            <span class="eyebrow">What I do</span>
             <h2>我可以幫你什麼</h2>
             <p class="lead">
               工作卡住了，還是人生卡住了？<br />從你現在最需要的那一個開始
@@ -90,13 +96,12 @@
       <section class="section">
         <div class="container">
           <div class="center reveal" style="margin-bottom: 48px">
-            <span class="eyebrow">Who</span>
             <h2>為什麼是我</h2>
             <p class="lead">
               一邊是程式碼的邏輯，一邊是命盤裡的故事<br />我是兩邊的翻譯，讓複雜的事情變得好懂
             </p>
           </div>
-          <div class="stats stats--2">
+          <div class="stats stats--2 stats--compact">
             <div class="stat reveal">
               <strong>7年</strong
               ><span>軟體工程師<br />把需求拆成可執行的系統</span>
@@ -128,6 +133,19 @@
           <p class="duo-sum reveal">
             不只給你答案，也陪你找到<strong>做得到的下一步</strong>
           </p>
+          <div class="stuck reveal">
+            <h3>你現在卡在哪裡？</h3>
+            <div class="stuck-choices">
+              <div class="stuck-choice">
+                <p>我想改善工作效率</p>
+                <a class="btn btn--ghost" href="digitalconsultant">AI 數位顧問</a>
+              </div>
+              <div class="stuck-choice">
+                <p>我想梳理人生方向</p>
+                <a class="btn btn--ghost" href="lifemap">紫微命理諮詢</a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -135,7 +153,6 @@
       <section class="section section--alt">
         <div class="container">
           <div class="center reveal" style="margin-bottom: 56px">
-            <span class="eyebrow">My story</span>
             <h2>我怎麼走到現在</h2>
             <p class="lead">從程式碼到命盤，其實是同一條路</p>
           </div>
@@ -195,7 +212,6 @@
       <section class="section">
         <div class="container">
           <div class="center reveal" style="margin-bottom: 56px">
-            <span class="eyebrow">How I work</span>
             <h2>我的工作方式</h2>
           </div>
           <div class="steps steps--vertical">
@@ -222,18 +238,19 @@
       </section>
 
       <!-- CTA -->
-      <section class="section">
+
+      <section class="section section--slim">
         <div class="container">
-          <div class="cta-band reveal">
-            <h2>你現在卡在哪裡？</h2>
-            <div class="cta-choices">
-              <div class="cta-choice">
-                <p>我想梳理人生方向</p>
-                <a class="btn" href="lifemap">紫微命理諮詢</a>
-              </div>
-              <div class="cta-choice">
+          <div class="stuck stuck--bottom reveal">
+            <h3>你現在卡在哪裡？</h3>
+            <div class="stuck-choices">
+              <div class="stuck-choice">
                 <p>我想改善工作效率</p>
-                <a class="btn" href="digitalconsultant">AI 數位顧問</a>
+                <a class="btn btn--ghost" href="digitalconsultant">AI 數位顧問</a>
+              </div>
+              <div class="stuck-choice">
+                <p>我想梳理人生方向</p>
+                <a class="btn btn--ghost" href="lifemap">紫微命理諮詢</a>
               </div>
             </div>
           </div>
@@ -242,6 +259,6 @@
     </main>
 
     <footer class="site-footer"></footer>
-    <script src="assets/js/main.js?v=9"></script>
+    <script src="assets/js/main.js?v=10"></script>
   </body>
 </html>

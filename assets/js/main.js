@@ -42,7 +42,7 @@ function renderHeader() {
   ).join("");
   return `
   <div class="container">
-    <a class="logo" href="./">${SITE.brand}<small>${SITE.brandSub}</small></a>
+    <a class="logo" href="./"><img class="logo-mark" src="favicon.svg" alt="" width="40" height="40" /><span class="logo-text">${SITE.brand}<small>${SITE.brandSub}</small></span></a>
     <button class="nav-toggle" aria-label="開啟選單" aria-expanded="false">☰</button>
     <nav class="nav">
       ${links}
