@@ -519,3 +519,37 @@ body .cta-band h2 { color: #fff; }
 .compare td { color: var(--text); }
 .compare tbody tr:last-child th, .compare tbody tr:last-child td { border-bottom: 0; }
 @media (max-width: 860px) { .modes { grid-template-columns: 1fr; } }
+/* 螢光筆標示：底部 55% 淡灰紫，換行也連續 */
+.hl { background: linear-gradient(transparent 50%, rgba(236, 184, 176, .32) 50%); color: var(--text); padding: 0 .3em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.center .lead .hl { line-height: 1.8; }
+/* 諮詢方案：卡片縮短 */
+.plans--5 .plan { padding: 22px 24px 24px; }
+.plans--5 .plan .plan-img { aspect-ratio: 2/1; margin-bottom: 12px; }
+.plans--5 .plan h3 { font-size: 1.12rem; line-height: 1.45; margin-bottom: .35em; }
+.plans--5 .plan .price { font-size: 1.6rem; margin: .1em 0 .4em; }
+.plans--5 .plan .price--ref { font-size: 1.05rem; }
+.plans--5 .plan .plan-lead { font-size: .92rem; margin-bottom: .4em; }
+.plans--5 .plan ul { font-size: .92rem; line-height: 1.6; margin-bottom: 1em; }
+.plans--5 .plan li { margin-bottom: .15em; }
+/* 為什麼找我：字卡縮小 */
+#who .grid-3 { gap: 18px; }
+#who .card { padding: 20px 22px 22px; }
+#who .card-icon { width: 40px; height: 40px; font-size: 1.2rem; margin-bottom: 10px; border-radius: 11px; }
+#who .card h3 { font-size: 1.05rem; margin-bottom: .3em; }
+#who .card p { font-size: .9rem; line-height: 1.7; margin-bottom: 0; }
+/* 我的故事：三段對照＋收尾強調 */
+.story-me h3 { font-size: clamp(1.3rem, 2.6vw, 1.7rem); margin-bottom: .2em; }
+.story-beats { display: block; margin: 24px 0 28px; }
+.story-beats { max-width: 680px; padding-bottom: 8px; }
+.story-beats > div + div { margin-top: 1.6em; }
+.story-beats b { display: block; font-size: 1.05rem; letter-spacing: .08em; }
+.story-beats p { font-size: 1rem; line-height: 1.9; margin: 0; }
+.story-beats p strong { color: var(--text); font-weight: 700; }
+.story-end { text-align: center; border-top: 1px solid var(--line); padding-top: 28px; }
+.story-end p { margin: 0; color: var(--muted); line-height: 1.9; }
+.story-end .story-key { font-family: var(--font-serif); font-size: clamp(1.15rem, 2.2vw, 1.4rem); line-height: 1.7; color: var(--text); margin-bottom: .7em; }
+.story-end .story-key strong { color: var(--primary-deep); font-weight: 700; }
+/* 圖片防護：不能拖曳、選取，右鍵不會出現「另存圖片／在新分頁開啟圖片」 */
+.photo--locked img { pointer-events: none; -webkit-user-drag: none; user-select: none; -webkit-touch-callout: none; }
+.photo--locked { -webkit-touch-callout: none; user-select: none; }
+.photo:has(img[src*="ziwei-result"]) { max-width: 360px; }

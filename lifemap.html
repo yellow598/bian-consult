@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/style.css?v=55" />
+    <link rel="stylesheet" href="assets/css/style.css?v=64" />
   </head>
   <body class="theme-ziwei">
     <header class="site-header"></header>
@@ -139,7 +139,9 @@
           <div class="center reveal" style="margin-bottom: 48px">
             <h2>為什麼找我</h2>
             <p class="lead">
-              我不是最資深的老師，<br />但我會用最認真、最誠實的方式陪你看盤
+              <mark class="hl"
+                >我不是最資深的老師，<br />但我會用最認真、最誠實的方式陪你看盤</mark
+              >
             </p>
           </div>
           <div class="grid-3">
@@ -195,31 +197,41 @@
             <h2>我能幫你做的</h2>
           </div>
           <div class="story-me reveal">
-            <span class="story-tag">我自己第一次的算命經驗</span>
-            <h3>聽完很感動，一周後卻忘了一半</h3>
+            <span class="story-tag">先說我自己第一次的算命經驗</span>
+            <h3>聽了一小時，一週後只記得三件事</h3>
             <div class="story-beats">
               <div>
-                <b>當天</b>
                 <p>
-                  老師把我的命盤講了一個小時，我一直點頭，覺得句句說到心坎裡，走出門時整個人輕飄飄的。
+                  那位命理師阿北，用很平穩、音調一致的聲音，把我的命盤講了一個小時。<br />
+                  聽到接下來可能會發生的事，我當下真的超震撼。<br />
+                  但中間一堆我聽不懂的，什麼飛星、忌沖對宮…，只能用點頭表示收到。
                 </p>
               </div>
               <div>
-                <b>一周後</b>
                 <p>
-                  朋友好奇問我：「老師怎麼說？」我張開嘴，只想起兩三句，連要注意的是哪一年都記不得了。
+                  朋友好奇問我：「老師怎麼說？」<br />
+                  我努力回想，只記得幾件印象比較深的事。<br />
+                  連到底要注意哪一年，我都記得模模糊糊的，不太確定欸…
                 </p>
               </div>
               <div>
-                <b>那一刻</b>
                 <p>
-                  花了錢、花了時間，聽到的一半卻已經還給老師。好多專業術語，我也記不起來。真的很糗很可惜。
+                  那一刻真的好怨嘆喔…<br />
+                  錢花了、時間也花了，聽到的卻有一半已經還給老師。
                 </p>
               </div>
             </div>
-            <p class="story-end">
-              所以後來我自己解盤，第一件事就是：<strong>把重點寫下來給你</strong>。你不用邊聽邊抄，也不怕忘記。
-            </p>
+            <div class="story-end">
+              <p class="story-key">
+                所以後來換我幫人解盤，第一件事就是：<br /><strong
+                  >把重點寫下來給你。</strong
+                >
+              </p>
+              <p>
+                你不用邊聽邊抄，也不怕回家就忘。<br />
+                哪一年要注意什麼，隨時打開就看得到。
+              </p>
+            </div>
           </div>
           <div class="split" style="margin-top: 72px">
             <div class="reveal">
@@ -232,13 +244,16 @@
                 <li>我用白話整理成重點，不賣弄術語</li>
                 <li>今年的節奏起伏，還有你自己沒注意到的盲點，一次攤開來看</li>
               </ul>
-              <p class="note">※ 右圖為示意，實際內容依你的命盤與問題而定。</p>
             </div>
-            <div class="photo reveal">
+            <div
+              class="photo photo--locked reveal"
+              oncontextmenu="return false;"
+            >
               <img
-                src="assets/img/ziwei-result-2.jpg"
-                alt="命盤與重點紀錄的解析成果示意圖"
+                src="assets/img/ziwei-result-7.jpg"
+                alt="黑白報告版面的命盤與文字重點示意圖，命盤中間的個人資訊已模糊"
                 loading="lazy"
+                draggable="false"
               />
             </div>
           </div>
@@ -271,7 +286,7 @@
                 </p>
               </blockquote>
               <figcaption>醫院護理人員</figcaption>
-              <details class="review-shot">
+              <details class="review-shot" open>
                 <summary>原始回饋截圖</summary>
                 <img
                   src="assets/img/reviews/review-1.jpg"
@@ -289,7 +304,7 @@
                 </p>
               </blockquote>
               <figcaption>平面設計師</figcaption>
-              <details class="review-shot">
+              <details class="review-shot" open>
                 <summary>原始回饋截圖</summary>
                 <img
                   src="assets/img/reviews/review-2.jpg"
@@ -460,8 +475,9 @@
               <h3>實體<br />一對一諮詢</h3>
               <div class="price">NT$ 3,300 <small>／ 60 分鐘</small></div>
               <ul>
-                <li>面對面對談，地點以台北為主</li>
-                <li>適合想深入來回討論的複雜問題</li>
+                <li>地點以台北為主</li>
+                <li>有些話當面講比隔著螢幕自在，比較能慢慢說</li>
+                <li>不用擔心網路或畫面問題，可以專心把時間留給自己</li>
               </ul>
               <a
                 class="btn btn--ghost"
