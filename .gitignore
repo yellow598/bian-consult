@@ -33,3 +33,7 @@ node_modules/
 
 # 客戶回饋原始資料（含個資，不公開）
 客戶回饋.xlsx
+
+# Claude Code 專案說明（只留在本機）
+CLAUDE.md
+CLAUDE.local.md
