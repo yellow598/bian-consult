@@ -22,9 +22,10 @@ const SITE = {
 
 // 連結不帶 .html（GitHub Pages 會自動對應到同名的 .html 檔）；首頁用 "./"
 const NAV = [
-  { key: "index", href: "./", label: "首頁" },
+  // Demo 期間暫時隱藏首頁、AI 數位顧問（要恢復就取消註解）
+  // { key: "index", href: "./", label: "首頁" },
   { key: "about", href: "about", label: "關於我" },
-  { key: "digitalconsultant", href: "digitalconsultant", label: "AI 數位顧問" },
+  // { key: "digitalconsultant", href: "digitalconsultant", label: "AI 數位顧問" },
   { key: "lifemap", href: "lifemap", label: "紫微命理" },
 ];
 
@@ -42,7 +43,7 @@ function renderHeader() {
   ).join("");
   return `
   <div class="container">
-    <a class="logo" href="./"><img class="logo-mark" src="favicon.svg" alt="" width="40" height="40" /><span class="logo-text">${SITE.brand}<small>${SITE.brandSub}</small></span></a>
+    <a class="logo" href="about"><img class="logo-mark" src="favicon.svg" alt="" width="40" height="40" /><span class="logo-text">${SITE.brand}<small>${SITE.brandSub}</small></span></a>
     <button class="nav-toggle" aria-label="開啟選單" aria-expanded="false">☰</button>
     <nav class="nav">
       ${links}
@@ -62,7 +63,7 @@ function renderFooter() {
       <div>
         <h4>服務</h4>
         <ul>
-          <li><a href="digitalconsultant">AI 數位顧問</a></li>
+          <!-- Demo 期間暫時隱藏：<li><a href="digitalconsultant">AI 數位顧問</a></li> -->
           <li><a href="lifemap">紫微命理諮詢</a></li>
         </ul>
       </div>
