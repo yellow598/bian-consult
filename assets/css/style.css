@@ -553,3 +553,7 @@ body .cta-band h2 { color: #fff; }
 .photo--locked img { pointer-events: none; -webkit-user-drag: none; user-select: none; -webkit-touch-callout: none; }
 .photo--locked { -webkit-touch-callout: none; user-select: none; }
 .photo:has(img[src*="ziwei-result"]) { max-width: 360px; }
+
+/* 諮詢方案：關於我簡介 */
+.plans-about { margin: 28px 0 0; text-align: center; font-size: .95rem; line-height: 1.7; color: var(--muted); text-wrap: balance; }
+.plans-about a { display: inline-block; margin-left: .8em; color: var(--primary-deep); text-decoration: underline; text-underline-offset: 4px; white-space: nowrap; }
