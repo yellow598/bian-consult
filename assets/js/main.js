@@ -23,7 +23,8 @@ const SITE = {
 const NAV = [
   // Demo 期間暫時隱藏首頁、AI 數位顧問（要恢復就取消註解）
   // { key: "index", href: "./", label: "首頁" },
-  { key: "about", href: "about", label: "關於我" },
+  // 暫時隱藏關於我（要恢復就取消註解，並把下方 logo 連結改回 about）
+  // { key: "about", href: "about", label: "關於我" },
   // { key: "digitalconsultant", href: "digitalconsultant", label: "AI 數位顧問" },
   { key: "lifemap", href: "lifemap", label: "紫微命理" },
 ];
@@ -42,7 +43,7 @@ function renderHeader() {
   ).join("");
   return `
   <div class="container">
-    <a class="logo" href="about"><img class="logo-mark" src="favicon.svg" alt="" width="40" height="40" /><span class="logo-text">${SITE.brand}</span></a>
+    <a class="logo" href="lifemap"><img class="logo-mark" src="favicon.svg" alt="" width="40" height="40" /><span class="logo-text">${SITE.brand}</span></a>
     <button class="nav-toggle" aria-label="開啟選單" aria-expanded="false">☰</button>
     <nav class="nav">
       ${links}
