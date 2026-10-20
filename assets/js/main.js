@@ -14,7 +14,6 @@
 
 const SITE = {
   brand: "比安學姊",
-  brandSub: "AI 數位顧問 × 紫微命理",
   // email: "hello@example.com", // （待替換）
   line: "LINE",
   // instagram: "https://instagram.com/", // （待替換）
@@ -43,7 +42,7 @@ function renderHeader() {
   ).join("");
   return `
   <div class="container">
-    <a class="logo" href="about"><img class="logo-mark" src="favicon.svg" alt="" width="40" height="40" /><span class="logo-text">${SITE.brand}<small>${SITE.brandSub}</small></span></a>
+    <a class="logo" href="about"><img class="logo-mark" src="favicon.svg" alt="" width="40" height="40" /><span class="logo-text">${SITE.brand}</span></a>
     <button class="nav-toggle" aria-label="開啟選單" aria-expanded="false">☰</button>
     <nav class="nav">
       ${links}
@@ -93,6 +92,37 @@ document.addEventListener("DOMContentLoaded", () => {
     toggle.setAttribute("aria-expanded", open);
     toggle.textContent = open ? "✕" : "☰";
   });
+
+  // 浮動預約按鈕：只出現在服務頁，捲過首屏後才浮出，頁尾進入畫面時收起
+  const FLOAT_LINKS = {
+    lifemap: "https://lin.ee/U0YWXhv",
+    digitalconsultant: "https://forms.gle/4ykbiG6Nf3A6dm2x9",
+  };
+  const floatHref = FLOAT_LINKS[currentPage()];
+  if (floatHref) {
+    const fab = document.createElement("a");
+    fab.className = "fab-book";
+    fab.href = floatHref;
+    fab.target = "_blank";
+    fab.rel = "noopener noreferrer";
+    fab.textContent = "預約";
+    document.body.appendChild(fab);
+    let pastHero = false;
+    let nearFooter = false;
+    const sync = () => fab.classList.toggle("show", pastHero && !nearFooter);
+    const onScroll = () => {
+      pastHero = window.scrollY > 480;
+      sync();
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    if (footer) {
+      new IntersectionObserver((entries) => {
+        nearFooter = entries[0].isIntersecting;
+        sync();
+      }).observe(footer);
+    }
+  }
 
   // 捲動淡入
   const io = new IntersectionObserver(
