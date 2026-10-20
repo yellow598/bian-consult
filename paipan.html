@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>比安學姊 | 紫微命理 | 數位服務顧問</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="description" content="免費紫微斗數線上排盤" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css?v=88" />
+  </head>
+  <body class="theme-ziwei">
+    <header class="site-header"></header>
+
+    <main>
+      <section class="hero hero--center">
+        <div class="container">
+          <h1>免費紫微斗數排盤</h1>
+          <p class="lead">
+            輸入生辰，立即排出你的命盤。<br />
+            可以切換看本命、大限、流年，點任一宮位會標出它的三方四正。
+          </p>
+          <p class="hero-note">
+            計算全部在你的電腦裡完成，生辰資料不會上傳，也不會被儲存
+          </p>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="tool">
+        <div class="container">
+          <form class="pp-form reveal" id="pp-form" autocomplete="off">
+            <div class="pp-field pp-field--name">
+              <label for="pp-name">姓名（選填）</label>
+              <input
+                id="pp-name"
+                type="text"
+                maxlength="12"
+                placeholder="只用來顯示給你看"
+              />
+            </div>
+            <div class="pp-field">
+              <label for="pp-cal">曆法</label>
+              <select id="pp-cal">
+                <option value="solar">國曆（西曆）</option>
+                <option value="lunar">農曆</option>
+              </select>
+            </div>
+            <div class="pp-field pp-field--date">
+              <label for="pp-year">出生日期</label>
+              <div class="pp-date">
+                <select id="pp-year" aria-label="年"></select>
+                <select id="pp-month" aria-label="月"></select>
+                <select id="pp-day" aria-label="日"></select>
+              </div>
+              <label class="pp-check" id="pp-leap-wrap" hidden>
+                <input type="checkbox" id="pp-leap" /> 閏月
+              </label>
+            </div>
+            <div class="pp-field">
+              <label for="pp-hour">出生時辰</label>
+              <select id="pp-hour"></select>
+            </div>
+            <div class="pp-field">
+              <span class="pp-label">性別</span>
+              <div class="pp-radio">
+                <label
+                  ><input type="radio" name="pp-gender" value="女" checked />
+                  女</label
+                >
+                <label
+                  ><input type="radio" name="pp-gender" value="男" /> 男</label
+                >
+              </div>
+            </div>
+            <div class="pp-actions">
+              <button class="btn" type="submit">排盤</button>
+              <p class="pp-error" id="pp-error" role="alert" hidden></p>
+            </div>
+          </form>
+
+          <div class="pp-result" id="pp-result" hidden>
+            <div class="pp-toolbar">
+              <div class="pp-seg" role="tablist" aria-label="檢視">
+                <button type="button" class="on" data-mode="natal">本命</button>
+                <button type="button" data-mode="decadal">大限</button>
+                <button type="button" data-mode="yearly">流年</button>
+              </div>
+              <label class="pp-year-pick" id="pp-year-pick" hidden>
+                參考年份
+                <select id="pp-hyear" aria-label="參考年份"></select>
+              </label>
+              <label class="pp-check">
+                <input type="checkbox" id="pp-adj" checked /> 顯示雜曜
+              </label>
+              <div class="pp-tool-btns">
+                <button type="button" class="pp-link" id="pp-copy">
+                  複製命盤文字
+                </button>
+                <button type="button" class="pp-link" id="pp-print">
+                  列印／存成 PDF
+                </button>
+              </div>
+            </div>
+            <p class="pp-mode-note" id="pp-mode-note"></p>
+            <div class="pp-chart" id="pp-chart" aria-label="紫微斗數命盤"></div>
+            <div class="pp-legend">
+              <span><i class="m-lu">祿</i> 化祿</span>
+              <span><i class="m-quan">權</i> 化權</span>
+              <span><i class="m-ke">科</i> 化科</span>
+              <span><i class="m-ji">忌</i> 化忌</span>
+              <span class="pp-legend-tip">點宮位看三方四正</span>
+            </div>
+            <div class="pp-sihua" id="pp-sihua"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="center reveal" style="margin-bottom: 40px">
+            <h2>使用前先知道</h2>
+          </div>
+          <div class="faq reveal">
+            <details>
+              <summary>不確定出生時辰怎麼辦？</summary>
+              <p>
+                時辰差一格，命盤就會完全不同。建議先向家人確認，或到戶政事務所查閱出生登記（台灣地區）。不確定時，可以先用前後兩個時辰各排一張，看哪一張比較貼近你的經驗。
+              </p>
+            </details>
+            <details>
+              <summary>23:00～00:00 出生算哪個時辰？</summary>
+              <p>
+                這段時間稱為「晚子時」，選單裡有獨立選項。早子與晚子的時辰都是子時，但日柱的算法各流派不同。
+              </p>
+            </details>
+            <details>
+              <summary>我的資料會被收集嗎？</summary>
+              <p>
+                不會。所有計算都在你自己的電腦裡完成，姓名與生辰不會送到任何伺服器，重新整理頁面後就清空。
+              </p>
+            </details>
+            <details>
+              <summary>排出來的盤可以直接拿來判斷人生嗎？</summary>
+              <p>
+                排盤只是把星曜放到正確的位置，真正的功夫在解讀。命盤是了解自己的參考，不取代專業意見，也不能取代醫療、法律或財務上的判斷。
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--slim">
+        <div class="container">
+          <div class="cta-soft reveal">
+            <div class="cta-soft-text">
+              <h3>排出命盤，卻看不太懂？</h3>
+              <p>可以先加 LINE 預約解盤，15 分鐘諮詢完全免費</p>
+            </div>
+            <div class="cta-soft-actions">
+              <a class="cta-soft-link" href="lifemap">紫微命理諮詢</a>
+              <a
+                class="btn btn--ghost"
+                href="https://lin.ee/U0YWXhv"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LINE 預約解盤</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"></footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/iztro@2.6.1/dist/iztro.min.js"
+      integrity="sha256-ASWNhwpnJDDMAqfC2Vj9gIOFOrH+zG9BKgqFXDMc7js="
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/main.js?v=14"></script>
+    <script src="assets/js/paipan.js?v=10"></script>
+  </body>
+</html>

@@ -604,3 +604,138 @@ body .cta-band h2 { color: #fff; }
 /* 方案標題：服務形式（線上／實體／文字版）做成小標籤，與名稱同一行 */
 .plans--5 .plan h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
 .plan-mode { flex: none; padding: 2px 10px; border-radius: 999px; background: var(--block-soft, var(--bg-alt)); color: var(--primary-deep); font-family: var(--font-sans); font-size: .78rem; font-weight: 700; letter-spacing: .08em; line-height: 1.6; }
+
+/* =========================================================
+   免費排盤頁（paipan）
+   ========================================================= */
+.pp-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 18px 20px; align-items: end; max-width: 980px; margin: 0 auto; padding: clamp(20px, 3vw, 32px); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.pp-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.pp-field--date { grid-column: span 2; }
+.pp-field label, .pp-label { font-size: .88rem; color: var(--muted); }
+.pp-form input[type=text], .pp-form select, .pp-toolbar select { width: 100%; min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--text); font: inherit; font-size: 1rem; }
+.pp-date { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 8px; }
+.pp-radio { display: flex; gap: 20px; min-height: 44px; align-items: center; }
+.pp-radio label, .pp-check { display: inline-flex; align-items: center; gap: 6px; font-size: .95rem; color: var(--text); cursor: pointer; }
+.pp-check[hidden] { display: none; }
+.pp-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.pp-error { margin: 0; color: #A24E4E; font-size: .9rem; }
+@media (max-width: 560px) { .pp-field--date { grid-column: 1 / -1; } }
+
+.pp-result { margin-top: clamp(32px, 5vw, 56px); }
+.pp-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; max-width: 980px; margin: 0 auto 10px; }
+.pp-seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--surface); }
+.pp-seg button { min-height: 40px; padding: 0 20px; border: 0; background: none; color: var(--muted); font: inherit; font-size: .95rem; cursor: pointer; }
+.pp-seg button.on { background: var(--primary-deep); color: var(--on-primary); }
+.pp-year-pick { display: inline-flex; align-items: center; gap: 8px; font-size: .9rem; color: var(--muted); }
+.pp-year-pick[hidden] { display: none; }
+.pp-year-pick select { width: auto; min-height: 40px; }
+.pp-tool-btns { margin-left: auto; display: flex; gap: 18px; }
+.pp-link { border: 0; background: none; padding: 8px 0; color: var(--primary-deep); font: inherit; font-size: .9rem; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+.pp-mode-note { max-width: 980px; margin: 0 auto 14px; font-size: .88rem; color: var(--muted); min-height: 1.4em; }
+
+.pp-chart { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, minmax(150px, auto)); max-width: 980px; margin: 0 auto; background: var(--surface); border: 1px solid var(--primary-deep); }
+.pp-cell { position: relative; display: flex; flex-direction: column; justify-content: space-between; min-width: 0; padding: 8px 8px 6px; border: 1px solid var(--line); cursor: pointer; transition: background .15s; }
+.pp-cell:hover { background: var(--block-soft); }
+.pp-cell:focus-visible { outline: 2px solid var(--primary-deep); outline-offset: -2px; }
+.pp-cell.is-rel { background: #F3F0F6; }
+.pp-cell.is-sel { background: var(--block-soft); box-shadow: inset 0 0 0 2px var(--primary); }
+.pp-stars { display: flex; flex-direction: column; gap: 6px; }
+.pp-major, .pp-minor, .pp-adj { display: flex; flex-wrap: wrap; gap: 2px 8px; }
+.pp-major .s-major { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 700; color: var(--primary-deep); line-height: 1.35; }
+.pp-minor .s-minor { font-size: .82rem; color: var(--text); line-height: 1.4; }
+.pp-adj { gap: 1px 6px; }
+.pp-adj span { font-size: .72rem; color: var(--muted); }
+.pp-stars sub { font-size: .62em; color: var(--muted); font-weight: 400; vertical-align: baseline; margin-left: 1px; }
+.pp-stars i { display: inline-block; margin-left: 2px; padding: 0 3px; border-radius: 4px; font-style: normal; font-family: var(--font-sans); font-size: .68rem; font-weight: 700; line-height: 1.5; color: #fff; vertical-align: .1em; }
+.pp-stars i.is-scope { opacity: .8; }
+.m-lu { background: #6E8D73; } .m-quan { background: #B08A4A; } .m-ke { background: #6D86A6; } .m-ji { background: #A24E4E; }
+.pp-foot { display: flex; justify-content: space-between; margin-top: 8px; font-size: .72rem; color: var(--muted); }
+.pp-head { display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 2px 6px; margin-top: 4px; padding-top: 4px; border-top: 1px dashed var(--line); }
+.pp-gz { font-size: .8rem; color: var(--muted); }
+.pp-pname { grid-column: 2; grid-row: 1; justify-self: end; font-family: var(--font-serif); font-size: .98rem; color: var(--text); }
+.pp-tags { grid-column: 1 / -1; grid-row: 2; display: flex; flex-wrap: wrap; gap: 3px; }
+.pp-tags:empty { display: none; }
+.pp-tags em { font-style: normal; padding: 0 6px; border-radius: 999px; border: 1px solid var(--primary-deep); color: var(--primary-deep); font-size: .68rem; line-height: 1.6; }
+.pp-tags .t-dec { background: var(--primary-deep); color: var(--on-primary); }
+.pp-tags .t-year { background: #8A5236; border-color: #8A5236; color: var(--on-primary); }
+.pp-cell.is-soul .pp-pname { color: var(--primary-deep); font-weight: 700; }
+
+.pp-center { display: flex; flex-direction: column; justify-content: center; padding: clamp(10px, 2vw, 22px); border: 1px solid var(--line); background: var(--bg); }
+.pp-center h3 { margin: 0 0 8px; font-size: 1.2rem; text-align: center; color: var(--title); }
+.pp-center dl { margin: 0; display: grid; gap: 4px; }
+.pp-center dl > div { display: grid; grid-template-columns: 5.2em 1fr; gap: 8px; font-size: .88rem; line-height: 1.5; }
+.pp-center dt { color: var(--muted); }
+.pp-center dd { margin: 0; color: var(--text); }
+
+.pp-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; max-width: 980px; margin: 12px auto 0; font-size: .82rem; color: var(--muted); }
+.pp-legend i { display: inline-block; padding: 0 5px; border-radius: 4px; font-style: normal; font-size: .72rem; font-weight: 700; line-height: 1.5; color: #fff; }
+.pp-legend-tip { margin-left: auto; }
+.pp-sihua { max-width: 980px; margin: 20px auto 0; display: grid; gap: 0; }
+.pp-sihua-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; padding: 12px 0; border-top: 1px solid var(--line); }
+.pp-sihua-row h4 { margin: 0; min-width: 5.5em; font-size: .95rem; color: var(--primary-deep); }
+.pp-sihua-row ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.pp-sihua-row li { display: inline-flex; align-items: center; gap: 6px; font-size: .92rem; }
+.pp-sihua-row li i { padding: 0 6px; border-radius: 4px; font-style: normal; font-size: .75rem; font-weight: 700; line-height: 1.6; color: #fff; }
+.pp-sihua-row li span { color: var(--muted); font-size: .85rem; }
+
+@media (max-width: 700px) {
+  .pp-chart { grid-template-rows: repeat(4, minmax(128px, auto)); }
+  .pp-cell { padding: 5px 4px 4px; }
+  .pp-major .s-major { font-size: .9rem; }
+  .pp-minor .s-minor { font-size: .72rem; }
+  .pp-major, .pp-minor { gap: 1px 5px; }
+  .pp-stars i { font-size: .58rem; padding: 0 2px; margin-left: 1px; }
+  .pp-pname { font-size: .82rem; }
+  .pp-gz, .pp-foot { font-size: .64rem; }
+  .pp-center { padding: 8px 6px; }
+  .pp-center h3 { font-size: 1rem; margin-bottom: 4px; }
+  .pp-center dl > div { grid-template-columns: 1fr; gap: 0; font-size: .72rem; line-height: 1.35; }
+  .pp-center dt { font-size: .64rem; }
+  .pp-tool-btns { margin-left: 0; }
+  .pp-legend-tip { margin-left: 0; width: 100%; }
+}
+
+@media print {
+  .site-header, .site-footer, .pp-form, .pp-toolbar, .fab-book, .section--slim, .faq, .hero { display: none !important; }
+  body { background: #fff; }
+  .section, .section--alt { padding: 0; background: #fff; }
+  .pp-chart { max-width: none; }
+}
+
+/* 流年方案「價格與時間」說明：字體與顏色同其他方案價格 */
+.plans--5 .plan .price--ref { font-size: 1.1rem; font-weight: 400; line-height: inherit; color: var(--primary-deep); }
+
+/* 紫微頁首屏按鈕：上下兩排、每排兩個 */
+.btn-row--2x2 { display: grid; grid-template-columns: repeat(2, max-content); gap: 12px; }
+
+/* 排盤頁：星曜名稱直式顯示（名稱由上往下，亮度與四化接在下方） */
+.pp-major, .pp-minor, .pp-adj { align-items: flex-start; gap: 2px 8px; }
+.pp-major .s-major, .pp-minor .s-minor { display: inline-flex; flex-direction: column; align-items: center; gap: 1px; }
+.pp-stars .nm { writing-mode: vertical-rl; text-orientation: upright; letter-spacing: .06em; font-weight: inherit; }
+.pp-stars i { writing-mode: vertical-rl; text-orientation: upright; margin: 2px 0 0; padding: 3px 1px; line-height: 1.2; }
+.pp-adj { gap: 2px 5px; }
+.pp-adj span { writing-mode: vertical-rl; text-orientation: upright; letter-spacing: .04em; }
+
+/* 排盤頁：十輔星、紅鸞天喜換色，與主星併排 */
+.pp-major .s-major.s-fu { color: #4F6D8F; font-weight: 500; }
+.pp-major .s-major.s-love { color: #B5646E; font-weight: 500; }
+
+/* 紫微頁首屏 2x2 按鈕：文字置中 */
+.btn-row--2x2 .btn { justify-content: center; text-align: center; }
+
+/* 排盤頁：命盤全部用明體（Noto Serif TC），主星加深顯色 */
+.pp-chart, .pp-chart *, .pp-legend, .pp-sihua { font-family: var(--font-serif); }
+.pp-stars i, .pp-legend i, .pp-sihua-row li i, .pp-tags em { font-family: var(--font-serif); font-weight: 700; }
+.pp-major .s-major:not(.s-fu):not(.s-love):not(.s-sky) { color: #4A3560; font-weight: 700; font-size: 1.12rem; }
+@media (max-width: 700px) { .pp-major .s-major:not(.s-fu):not(.s-love):not(.s-sky) { font-size: .95rem; } }
+
+/* 排盤頁：三方四正虛線 */
+.pp-chart { position: relative; }
+.pp-lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.pp-lines line { stroke: var(--primary-deep); stroke-width: 1.2; stroke-dasharray: 5 4; opacity: .75; }
+@media print { .pp-lines line { opacity: 1; } }
+
+/* 排盤頁：宮位干支分色（天干赤陶、地支灰綠） */
+.pp-gz b { font-weight: 700; }
+.pp-gz .gz-stem { color: #B5704F; }
+.pp-gz .gz-branch { color: #5E7D64; }
