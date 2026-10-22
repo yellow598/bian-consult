@@ -141,7 +141,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // 從其他頁連到 #錨點（例如 lifemap#reviews）：等頁首與字型載入後再捲到定位
   if (location.hash) {
     window.addEventListener("load", () => {
-      document.querySelector(location.hash)?.scrollIntoView({ behavior: "instant" });
+      try {
+        document.querySelector(location.hash)?.scrollIntoView({ behavior: "instant" });
+      } catch {} // 網址 # 後面不是合法選擇器時不報錯
     });
   }
 
