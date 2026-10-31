@@ -21,11 +21,9 @@ const SITE = {
 
 // 連結不帶 .html（GitHub Pages 會自動對應到同名的 .html 檔）；首頁用 "./"
 const NAV = [
-  // Demo 期間暫時隱藏首頁、AI 數位顧問（要恢復就取消註解）
-  // { key: "index", href: "./", label: "首頁" },
-  // 暫時隱藏關於我（要恢復就取消註解，並把下方 logo 連結改回 about）
-  // { key: "about", href: "about", label: "關於我" },
-  // { key: "digitalconsultant", href: "digitalconsultant", label: "AI 數位顧問" },
+  { key: "index", href: "./", label: "首頁" },
+  { key: "about", href: "about", label: "關於我" },
+  { key: "digitalconsultant", href: "digitalconsultant", label: "數位策略顧問" },
   { key: "lifemap", href: "lifemap", label: "紫微命理" },
 ];
 
@@ -43,7 +41,7 @@ function renderHeader() {
   ).join("");
   return `
   <div class="container">
-    <a class="logo" href="lifemap"><img class="logo-mark" src="favicon.svg" alt="" width="40" height="40" /><span class="logo-text">${SITE.brand}</span></a>
+    <a class="logo" href="./"><img class="logo-mark" src="favicon.svg" alt="" width="40" height="40" /><span class="logo-text">${SITE.brand}</span></a>
     <button class="nav-toggle" aria-label="開啟選單" aria-expanded="false">☰</button>
     <nav class="nav">
       ${links}
@@ -63,7 +61,7 @@ function renderFooter() {
       <div>
         <h4>服務</h4>
         <ul>
-          <!-- Demo 期間暫時隱藏：<li><a href="digitalconsultant">AI 數位顧問</a></li> -->
+          <li><a href="digitalconsultant">數位策略顧問</a></li>
           <li><a href="lifemap">紫微命理諮詢</a></li>
         </ul>
       </div>
@@ -137,6 +135,15 @@ document.addEventListener("DOMContentLoaded", () => {
     { threshold: 0.12 },
   );
   document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+  // 圖片防護（全站）：右鍵不出現「另存圖片／在新分頁開啟圖片／複製圖片」，也不能拖曳
+  // 掛在 document 上，之後新增的圖片自動適用；只防一般訪客，擋不住截圖或開發者工具
+  document.addEventListener("contextmenu", (e) => {
+    if (e.target instanceof HTMLImageElement) e.preventDefault();
+  });
+  document.addEventListener("dragstart", (e) => {
+    if (e.target instanceof HTMLImageElement) e.preventDefault();
+  });
 
   // 從其他頁連到 #錨點（例如 lifemap#reviews）：等頁首與字型載入後再捲到定位
   if (location.hash) {

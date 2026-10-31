@@ -739,3 +739,130 @@ body .cta-band h2 { color: #fff; }
 .pp-gz b { font-weight: 700; }
 .pp-gz .gz-stem { color: #B5704F; }
 .pp-gz .gz-branch { color: #5E7D64; }
+
+/* 全站圖片防護：不能拖曳、選取，手機長按不出現儲存選單（右鍵由 main.js 擋） */
+img { -webkit-user-drag: none; user-select: none; -webkit-touch-callout: none; }
+
+/* ---------- 蠟筆重點（手法見 .claude/skills/site-design-kit） ----------
+   筆刷圖放 assets/img/brush/，用 mask 上色，所以顏色跟著頁面主題（--block，沒有就用 --primary）
+   .crayon       重點詞底下的螢光筆刷（單行、不超過約 8 個字，每屏最多 1～2 處）
+   .crayon--line 改成底線筆觸
+   .crayon-ring  圈起來
+   h2.crayon-dash 標題下方一小段手繪短線 */
+.crayon, .crayon-ring { position: relative; display: inline; isolation: isolate; font-style: normal; white-space: nowrap; }
+.crayon::before, .crayon-ring::before {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  background: var(--block, var(--primary));
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%;
+}
+.crayon::before {
+  left: -.2em; right: -.2em; bottom: .02em; height: .7em; opacity: .55;
+  -webkit-mask-image: url(../img/brush/mark.svg); mask-image: url(../img/brush/mark.svg);
+}
+.crayon--line::before {
+  bottom: -.12em; height: .34em; opacity: .75;
+  -webkit-mask-image: url(../img/brush/underline.svg); mask-image: url(../img/brush/underline.svg);
+}
+.crayon-ring::before {
+  inset: -.3em -.5em; opacity: .7;
+  -webkit-mask-image: url(../img/brush/ring.svg); mask-image: url(../img/brush/ring.svg);
+}
+.crayon-dash::after {
+  content: ""; display: block; width: 4.5rem; height: .6rem; margin-top: .5rem;
+  background: var(--block, var(--primary)); opacity: .8;
+  -webkit-mask: url(../img/brush/dash.svg) no-repeat center / 100% 100%; mask: url(../img/brush/dash.svg) no-repeat center / 100% 100%;
+}
+.center .crayon-dash::after { margin-inline: auto; }
+/* 進場時像被畫上去：由左到右展開（沒有 JS 時不隱藏，減少動態時直接顯示） */
+.reveal .crayon::before, .reveal .crayon-ring::before { clip-path: inset(0 100% 0 0); transition: clip-path .9s ease .35s; }
+.reveal.in .crayon::before, .reveal.in .crayon-ring::before { clip-path: inset(0 0 0 0); }
+@media (prefers-reduced-motion: reduce) {
+  .reveal .crayon::before, .reveal .crayon-ring::before { clip-path: none; transition: none; }
+}
+
+/* 螢光筆：多行文字也能用（box-decoration-break 讓換行後每一行都有底色），顏色跟頁面主題走 */
+.marker {
+  background: linear-gradient(transparent 52%, color-mix(in srgb, var(--block, var(--primary)) 60%, transparent) 52%);
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  padding: 0 .15em;
+}
+/* 包月「同時最多幾家」：移除原本的黃色底，改用螢光筆 */
+.mode-warn { background: none; padding: 0; }
+
+/* 還沒有圖片的作品：單欄置中，補上圖片後把 case--noimg 拿掉即可 */
+.case--noimg { grid-template-columns: 1fr; max-width: 760px; margin-inline: auto; }
+
+/* 適合／不適合清單：打勾與打叉 */
+.checklist--yes li::before { content: "✓"; font-weight: 700; color: var(--primary-deep); }
+.checklist--no li::before { content: "✕"; font-weight: 700; font-size: .85em; color: var(--muted); }
+
+/* 線條區隔版卡片：沒有底色、陰影與色條，只用一條細線分隔（痛點區） */
+.grid-2--lines { gap: 40px 56px; }
+body .grid-2--lines .card {
+  background: none; box-shadow: none; border: 0; border-radius: 0;
+  border-top: 1px solid color-mix(in srgb, var(--muted) 40%, transparent);
+  padding: 28px 0 0;
+}
+/* 痛點區：小圖示與標題同一行，說明文字在下一行 */
+.grid-2--lines .card { display: grid; grid-template-columns: auto 1fr; column-gap: 14px; align-items: center; }
+.grid-2--lines .card-icon { width: 40px; height: 40px; border-radius: 12px; font-size: 1.2rem; margin-bottom: 0; }
+.grid-2--lines .card h3 { margin: 0; }
+.grid-2--lines .card p { grid-column: 1 / -1; margin: 14px 0 0; }
+/* 痛點區小圖示：不要底色（透明） */
+body .grid-2--lines .card-icon { background: transparent; width: auto; height: auto; border-radius: 0; }
+
+/* 首屏主題標籤：不再做成膠囊（避免像按鈕），改成螢光筆＋文字 */
+.topic-pills { gap: 10px 26px; }
+.topic-pills li {
+  background: linear-gradient(transparent 55%, color-mix(in srgb, var(--block, var(--primary)) 65%, transparent) 55%);
+  border: 0; border-radius: 0; padding: 0 .2em;
+  color: var(--text); font-size: 1rem; font-weight: 500; line-height: 1.6;
+}
+
+/* 作品多張圖：文字在上，3～4 張截圖並排在下（比例統一 16:10，手機一欄） */
+.case--gallery { grid-template-columns: 1fr; max-width: 980px; margin-inline: auto; }
+.case-shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-top: 8px; }
+.case-shots figure { margin: 0; }
+.case-shots img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); background: var(--block-soft, var(--bg-alt)); }
+.case-shots figcaption { margin-top: 8px; font-size: .82rem; color: var(--muted); text-align: center; }
+
+/* 截圖外框：像 Mac 視窗（上方三個圓點），截圖本身刻意用低解析度 */
+.mac { border: 1px solid var(--line); border-radius: 12px; background: #f1f2f3; box-shadow: var(--shadow); overflow: hidden; }
+.mac-bar { display: flex; gap: 6px; padding: 9px 12px; background: #e9eaec; border-bottom: 1px solid var(--line); }
+.mac-bar i { width: 9px; height: 9px; border-radius: 50%; background: #ff5f57; }
+.mac-bar i:nth-child(2) { background: #febc2e; }
+.mac-bar i:nth-child(3) { background: #28c840; }
+.mac img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 0; box-shadow: none; }
+.case-img .mac { margin: 0; }
+.case-img figcaption, .case-shots figcaption { margin-top: 10px; }
+/* 單欄的作品：寬度撐滿（置中的 max-width 在格線裡會縮成內容寬度，要明確給 width） */
+.case--gallery, .case--noimg { width: 100%; }
+
+/* 作品截圖：一排最多兩張（手機一欄） */
+.case-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+/* 電腦＋手機：電腦圖較寬，手機放右邊 */
+.case-shots--device { grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); align-items: center; }
+@media (max-width: 640px) {
+  .case-shots, .case-shots--device { grid-template-columns: 1fr; }
+}
+/* iPhone 外型：深色邊框、圓角、上方瀏海 */
+.iphone { position: relative; width: min(100%, 210px); margin-inline: auto; padding: 10px; border-radius: 36px; background: #1e2022; box-shadow: var(--shadow); }
+.iphone::before { content: ""; position: absolute; z-index: 2; top: 17px; left: 50%; width: 62px; height: 15px; transform: translateX(-50%); border-radius: 10px; background: #000; }
+.iphone img { display: block; width: 100%; aspect-ratio: auto; object-fit: cover; border-radius: 27px; box-shadow: none; }
+
+/* 關於我：首屏個人照（約 365px 寬），放在文字左邊；手機寬度照片在上、置中 */
+.hero-img:has(img[src*="bian-selfi-2"]) { width: 100%; max-width: 365px; order: -1; justify-self: center; }
+@media (min-width: 861px) {
+  .hero .container:has(.bio-facts) { grid-template-columns: 365px 1fr; }
+  .hero .container:has(.bio-facts) .hero-img { justify-self: start; }
+}
+
+/* 關於我「為什麼是我」下半部：不用圖卡，改用細線區隔（上下一條線、中間一條直線），拿掉 × */
+.duo { grid-template-columns: 1fr 1fr; gap: 0; max-width: 760px; border-top: 1px solid color-mix(in srgb, var(--muted) 40%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--muted) 40%, transparent); }
+.duo-col { background: none; border: 0; border-radius: 0; box-shadow: none; padding: 28px 32px; }
+.duo-col + .duo-col { border-left: 1px solid color-mix(in srgb, var(--muted) 40%, transparent); }
+@media (max-width: 700px) {
+  .duo { grid-template-columns: 1fr; }
+  .duo-col + .duo-col { border-left: 0; border-top: 1px solid color-mix(in srgb, var(--muted) 40%, transparent); }
+}
