@@ -20,37 +20,84 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/style.css?v=105" />
+    <link rel="stylesheet" href="assets/css/style.css?v=169" />
   </head>
-  <body class="theme-earth">
+  <body class="theme-earth page-home card-refresh">
     <header class="site-header"></header>
 
     <main>
       <!-- 首屏 -->
-      <section class="section">
+      <section class="section home-opening">
         <div class="container">
-          <div class="center reveal">
-            <span class="eyebrow">數位策略顧問 | 紫微命理諮詢</span>
-            <h1>工作卡住、人生卡關<br />我陪你<span class="crayon">把事情看清楚</span></h1>
-            <p class="lead">
-              一對一、說人話。<br />
-              把 AI 工具變成你用得上的流程，把命盤變成你做得了決定的依據。
-            </p>
+          <div class="home-photo-intro reveal">
+            <div class="home-photo-scene">
+              <img
+                class="home-photo-image"
+                src="assets/img/home-workspace-stilllife.png"
+                alt="自然光下的木質工作桌，擺著筆電、流程筆記與命盤紙頁"
+                width="1536"
+                height="1024"
+                fetchpriority="high"
+              />
+              <div class="home-photo-copy">
+                <span class="eyebrow">數位策略顧問 | 紫微命理諮詢</span>
+                <h1>先聊聊，<br />再把事情理清楚。</h1>
+                <p class="home-photo-description">
+                  <span class="nb">我幫你理順工作流程，</span
+                  ><span class="nb">少花時間在那些讓你覺得煩的事上。</span><br />
+                  <span class="nb">我把命盤裡看到的方向說清楚，</span
+                  ><span class="nb">讓你做選擇時多一份參考。</span>
+                </p>
+                <span class="home-photo-signature">比安學姊</span>
+              </div>
+            </div>
           </div>
-          <div class="grid-2" style="margin-top: 40px">
+          <div class="grid-2 home-service-grid">
             <article class="card service-card ai reveal">
               <div class="body">
-                <span class="tag">工作效率</span>
-                <h3>數位策略顧問</h3>
-                <p>找出最耗時的工作環節，導入用得上的 AI 工具與流程</p>
+                <span class="service-symbol" aria-hidden="true"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="8" y="2" width="8" height="5" rx="1" />
+                    <path
+                      d="M12 7v2.5M12 9.5l3 3-3 3-3-3z M9 12.5H5V17M15 12.5h4V17"
+                    />
+                    <rect x="2" y="17" width="6" height="5" rx="1" />
+                    <rect x="16" y="17" width="6" height="5" rx="1" /></svg
+                ></span>
+                <span class="tag">工程師的我・理性</span>
+                <h2>數位策略顧問</h2>
+                <p>
+                  每天被重複的工作追著跑？我幫你理順流程，把時間留給更重要的事。
+                </p>
                 <a class="btn" href="digitalconsultant">了解 數位策略顧問</a>
               </div>
             </article>
             <article class="card service-card ziwei reveal">
               <div class="body">
-                <span class="tag">人生方向</span>
-                <h3>紫微命理諮詢</h3>
-                <p>用命盤看懂自己的特質與節奏，在轉折點做出更有底氣的選擇</p>
+                <span class="service-symbol" aria-hidden="true"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="1" />
+                    <path
+                      d="M7.5 3v18M16.5 3v18M3 7.5h18M3 16.5h18M12 3v4.5M12 16.5V21M3 12h4.5M16.5 12H21"
+                    /></svg
+                ></span>
+                <span class="tag">紫微命理師的我・感性</span>
+                <h2>紫微命理諮詢</h2>
+                <p>想換個方向，卻還沒想清楚？我們從命盤一起梳理心裡的猶豫。</p>
                 <a class="btn" href="lifemap">了解紫微命理諮詢</a>
               </div>
             </article>
@@ -68,18 +115,21 @@
         <div class="container">
           <div class="center reveal">
             <span class="eyebrow">你是不是也這樣</span>
-            <h2>卡住的時候，心裡常常是這些聲音</h2>
+            <h2>
+              <span class="nb">卡住的時候，</span
+              ><span class="nb">心裡常常是這些聲音</span>
+            </h2>
           </div>
           <div class="grid-2 voices" style="margin-top: 48px">
             <div class="voice voice--ai reveal">
               <div class="voice-label">關於工作</div>
               <ul>
                 <li>
-                  「同樣的事每天重複做：回訊息、整理資料、做報表，一天就過去了。」
+                  「同樣的事每天要加班重複做：回訊息、整理資料、做報表。」
                 </li>
                 <li>「AI 工具買了、訂閱了，卻不知道怎麼用在自己的生意上。」</li>
                 <li>
-                  「想導入 AI，但不知道該從哪個流程開始，也怕花錢做白工。」
+                  「想改善工作方式，但不知道該從哪個流程開始，也怕花錢做白工。」
                 </li>
               </ul>
               <div class="voice-help">
@@ -108,6 +158,10 @@
         <div class="container">
           <div class="center reveal">
             <h2>我做過的服務與經驗</h2>
+            <p class="lead">
+              <span class="nb">7 年後端開發，</span
+              ><span class="nb">資安和備份是我的基本功</span>
+            </p>
           </div>
           <div class="stats stats--compact" style="margin-top: 40px">
             <div class="stat reveal">
@@ -124,8 +178,8 @@
             <article class="card reveal">
               <img
                 class="plan-img"
-                src="assets/img/exp/game-admin.webp"
-                alt="遊戲公司管理後台畫面"
+                src="assets/img/exp/orders-admin-blue.jpg"
+                alt="藍色訂單與收款管理後台，呈現收款趨勢、訂單來源及核對狀態示意"
                 loading="lazy"
               />
               <span class="case-num">01</span>
@@ -135,8 +189,8 @@
             <article class="card reveal">
               <img
                 class="plan-img"
-                src="assets/img/exp/support-2.jpg"
-                alt="客服人員在筆電前回覆客戶"
+                src="assets/img/exp/customer-support-asian.jpg"
+                alt="亞洲女性客服戴著耳機，透過筆電整理重複提問與常用回覆的情境示意"
                 loading="lazy"
               />
               <span class="case-num">02</span>
@@ -146,40 +200,18 @@
             <article class="card reveal">
               <img
                 class="plan-img"
-                src="assets/img/exp/monitor.webp"
-                alt="即時監控與分析畫面"
+                src="assets/img/exp/membership-admin-blue.jpg"
+                alt="藍色會員與活動管理後台，呈現會員資料、點數與優惠上架狀態示意"
                 loading="lazy"
               />
               <span class="case-num">03</span>
-              <h3>數字一有異常，馬上知道</h3>
-              <p>企業網站流量即時監控，以及廣告成效分析系統。</p>
-            </article>
-            <article class="card reveal">
-              <img
-                class="plan-img"
-                src="assets/img/exp/member-admin.jpg"
-                alt="會員管理後台畫面"
-                loading="lazy"
-              />
-              <span class="case-num">04</span>
               <h3>會員、點數、活動，不用再靠人工盯</h3>
               <p>連鎖餐飲員工 App 與管理後台，營運同事自己就能上架內容。</p>
-            </article>
-            <article class="card reveal">
-              <img
-                class="plan-img"
-                src="assets/img/exp/sop-handover.jpg"
-                alt="同事在 SOP 管理中心前接手工作"
-                loading="lazy"
-              />
-              <span class="case-num">05</span>
-              <h3>把「只有我會」變成人人都會的 SOP</h3>
-              <p>規劃功能上線的每個步驟，換誰接手，照著做都不會出錯。</p>
             </article>
           </div>
           <div class="center reveal" style="margin-top: 24px">
             <a class="btn btn--ghost" href="digitalconsultant#experience"
-              >看完整的經驗故事</a
+              >看完整服務案例</a
             >
           </div>
         </div>
@@ -216,50 +248,83 @@
         </div>
       </section>
 
-      <!-- 兩大服務 -->
+      <!-- 關於比安學姊 -->
       <section class="section">
         <div class="container">
-          <div class="center reveal">
-            <h2>你現在需要的，是哪一種幫助？</h2>
-            <p class="lead">兩種服務各自獨立，依你現在的需要選一個就好</p>
+          <div class="home-about">
+            <div class="hero-img reveal">
+              <img
+                src="assets/img/bian-selfi-4.jpg"
+                alt="比安學姊穿著淡黃色 T 恤坐在餐桌前，笑著撕麵包"
+                loading="lazy"
+              />
+            </div>
+            <div class="reveal">
+              <h2>比安學姊</h2>
+              <p class="slogan">
+                <span>左手寫程式，</span><span>右手排命盤</span><br /><span
+                  >用工程師的理性，</span
+                ><span>讀懂星盤裡的感性</span>
+              </p>
+              <a class="btn home-story-link" href="about"
+                >看我的故事<span aria-hidden="true">↗</span></a
+              >
+            </div>
           </div>
-          <div class="grid-2" style="margin-top: 48px">
-            <article class="card service-card ai reveal">
-              <div class="body">
-                <span class="tag">工作效率</span>
-                <h3>數位策略顧問</h3>
-                <p>
-                  找出工作裡最耗時的環節，導入真的用得上的 AI 工具，把時間還給你
-                </p>
-                <ul class="checklist">
-                  <li>每天被重複又瑣碎的作業綁住</li>
-                  <li>想用 AI，卻不知道從哪個工具開始</li>
-                  <li>流程散亂，需要整理成清楚的 SOP</li>
-                </ul>
-                <a class="btn" href="digitalconsultant">了解 數位策略顧問</a>
-              </div>
-            </article>
-            <article class="card service-card ziwei reveal">
-              <div class="body">
-                <span class="tag">人生方向</span>
-                <h3>紫微命理諮詢</h3>
-                <p>
-                  用命盤看懂自己的特質與人生節奏，在轉折點上，做出更有底氣的選擇
-                </p>
-                <ul class="checklist">
-                  <li>正在猶豫要不要換工作、轉換跑道</li>
-                  <li>很努力，卻不確定自己真正想要什麼</li>
-                  <li>關係或人際，一直重複相似的模式</li>
-                </ul>
-                <a class="btn" href="lifemap">了解紫微命理諮詢</a>
-              </div>
-            </article>
+        </div>
+      </section>
+
+      <!-- 你想先聊聊哪一件事 -->
+      <section class="section section--slim">
+        <div class="container">
+          <div class="stuck stuck--bottom reveal">
+            <h3>你想先聊聊哪一件事？</h3>
+            <div class="stuck-choices">
+              <a class="stuck-choice stuck-choice--ai" href="digitalconsultant">
+                <span class="stuck-choice-icon" aria-hidden="true"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="3" y="4" width="18" height="13" rx="2" />
+                    <path d="M8 21h8M12 17v4" /></svg
+                ></span>
+                <span class="stuck-choice-copy"
+                  ><span class="stuck-choice-prompt">我想改善工作效率</span
+                  ><strong>數位策略顧問</strong></span
+                >
+                <span class="stuck-choice-arrow" aria-hidden="true">↗</span>
+              </a>
+              <a class="stuck-choice stuck-choice--ziwei" href="lifemap">
+                <span class="stuck-choice-icon" aria-hidden="true"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="4" y="3" width="16" height="18" rx="2" />
+                    <path d="M4 9h16M4 15h16M10 3v18" /></svg
+                ></span>
+                <span class="stuck-choice-copy"
+                  ><span class="stuck-choice-prompt">我想梳理人生方向</span
+                  ><strong>紫微命理諮詢</strong></span
+                >
+                <span class="stuck-choice-arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer"></footer>
-    <script src="assets/js/main.js?v=20"></script>
+    <script src="assets/js/main.js?v=25"></script>
   </body>
 </html>

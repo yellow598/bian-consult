@@ -14,7 +14,7 @@
 
 const SITE = {
   brand: "比安學姊",
-  // email: "hello@example.com", // （待替換）
+  email: "evolve.mindset.studio@gmail.com", // 預約免費診斷表單寄到這裡
   line: "LINE",
   // instagram: "https://instagram.com/", // （待替換）
 };
@@ -40,12 +40,13 @@ function renderHeader() {
       `<a href="${n.href}" class="${n.key === page ? "active" : ""}">${n.label}</a>`,
   ).join("");
   return `
+  <a class="skip-link" href="#main">跳到主要內容</a>
   <div class="container">
     <a class="logo" href="./"><img class="logo-mark" src="favicon.svg" alt="" width="40" height="40" /><span class="logo-text">${SITE.brand}</span></a>
     <button class="nav-toggle" aria-label="開啟選單" aria-expanded="false">☰</button>
     <nav class="nav">
       ${links}
-      <a class="btn ${page === "contact" ? "active" : ""}" href="https://lin.ee/U0YWXhv" target="_blank" rel="noopener noreferrer">預約諮詢</a>
+      <a class="btn ${page === "contact" ? "active" : ""}" href="contact">預約諮詢</a>
     </nav>
   </div>`;
 }
@@ -55,25 +56,25 @@ function renderFooter() {
   <div class="container">
     <div class="cols">
       <div>
-        <h4>${SITE.brand}</h4>
+        <h2>${SITE.brand}</h2>
         <p>左手寫程式，右手排命盤<br>用工程師的理性，讀懂星盤裡的感性</p>
       </div>
       <div>
-        <h4>服務</h4>
+        <h2>服務</h2>
         <ul>
           <li><a href="digitalconsultant">數位策略顧問</a></li>
           <li><a href="lifemap">紫微命理諮詢</a></li>
         </ul>
       </div>
       <div>
-        <h4>聯絡</h4>
+        <h2>聯絡</h2>
         <ul>
-          <li><a href="https://forms.gle/4ykbiG6Nf3A6dm2x9" target="_blank" rel="noopener noreferrer">預約諮詢</a></li>
+          <li><a href="contact">預約諮詢</a></li>
           <li><a href="https://lin.ee/U0YWXhv" target="_blank" rel="noopener noreferrer">${SITE.line}</a></li>
         </ul>
       </div>
     </div>
-    <div class="copy">${SITE.brand} Biansis © All rights reserved.</div>
+    <div class="copy">© ${new Date().getFullYear()} ${SITE.brand} Biansis. All rights reserved.</div>
   </div>`;
 }
 
@@ -82,6 +83,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const footer = document.querySelector(".site-footer");
   if (header) header.innerHTML = renderHeader();
   if (footer) footer.innerHTML = renderFooter();
+
+  // 「跳到主要內容」連結的目標
+  const main = document.querySelector("main");
+  if (main) {
+    main.id = "main";
+    main.tabIndex = -1;
+  }
 
   // 手機選單
   const toggle = document.querySelector(".nav-toggle");
@@ -95,15 +103,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // 浮動預約按鈕：只出現在服務頁，捲過首屏後才浮出，頁尾進入畫面時收起
   const FLOAT_LINKS = {
     lifemap: "https://lin.ee/U0YWXhv",
-    digitalconsultant: "https://forms.gle/4ykbiG6Nf3A6dm2x9",
+    digitalconsultant: "contact",
   };
   const floatHref = FLOAT_LINKS[currentPage()];
   if (floatHref) {
     const fab = document.createElement("a");
     fab.className = "fab-book";
     fab.href = floatHref;
-    fab.target = "_blank";
-    fab.rel = "noopener noreferrer";
+    if (/^https?:/.test(floatHref)) {
+      fab.target = "_blank"; // 外部連結（LINE）另開分頁
+      fab.rel = "noopener noreferrer";
+    }
     fab.textContent = "預約";
     document.body.appendChild(fab);
     let pastHero = false;
@@ -154,20 +164,90 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 聯絡表單（目前無後端：改用開啟 Email 寄送；之後可換 Formspree / Google 表單）
-  const form = document.querySelector("#contact-form");
-  form?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const d = new FormData(form);
-    const body = [...d.entries()].map(([k, v]) => `${k}：${v}`).join("\n");
-    location.href = `mailto:${SITE.email}?subject=${encodeURIComponent("預約諮詢：" + d.get("服務項目"))}&body=${encodeURIComponent(body)}`;
-  });
+  // 預約免費診斷：三步驟表單（目前無後端，送出時開啟 Email 寄給比安）
+  const booking = document.querySelector("#booking-form");
+  if (booking) {
+    const steps = [...booking.querySelectorAll(".booking-step")];
+    const bars = [...booking.querySelectorAll(".booking-progress i")];
+    const prev = booking.querySelector(".booking-prev");
+    const next = booking.querySelector(".booking-next");
+    const submit = booking.querySelector(".booking-submit");
+    const error = booking.querySelector(".booking-error");
+    const done = booking.querySelector(".booking-done");
+    const foot = booking.querySelector(".booking-foot");
+    const head = [booking.querySelector(".booking-head"), booking.querySelector(".booking-progress"), booking.querySelector(".booking-actions")];
+    let current = 0;
 
-  // 從服務頁帶入預選項目 contact?service=ziwei
-  const svc = new URLSearchParams(location.search).get("service");
-  const select = document.querySelector("#service");
-  if (svc && select) {
-    const opt = [...select.options].find((o) => o.dataset.key === svc);
-    if (opt) opt.selected = true;
+    const show = (i) => {
+      current = i;
+      steps.forEach((s, n) => (s.hidden = n !== i));
+      bars.forEach((b, n) => b.classList.toggle("on", n <= i));
+      booking.querySelector("[data-step-num]").textContent = i + 1;
+      booking.querySelector("[data-step-title]").textContent = steps[i].dataset.title;
+      prev.hidden = i === 0;
+      next.hidden = i === steps.length - 1;
+      submit.hidden = i !== steps.length - 1;
+      error.hidden = true;
+      booking.querySelectorAll(".is-invalid").forEach((q) => q.classList.remove("is-invalid"));
+    };
+
+    // 檢查目前這一步的必填題，回傳第一個沒填的題目
+    const check = () => {
+      let first = null;
+      steps[current].querySelectorAll(".booking-q[data-required]").forEach((q) => {
+        const inputs = [...q.querySelectorAll("input, textarea")];
+        let ok = inputs.some((el) => (el.type === "radio" || el.type === "checkbox" ? el.checked : el.value.trim() !== ""));
+        if (ok && q.dataset.type === "email") ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputs[0].value.trim());
+        q.classList.toggle("is-invalid", !ok);
+        if (!ok && !first) first = q;
+      });
+      if (first) {
+        error.textContent = first.dataset.type === "email" && first.querySelector("input").value.trim()
+          ? "Email 格式好像不太對，再確認一下"
+          : `請填寫「${first.dataset.label}」`;
+        error.hidden = false;
+        (first.querySelector("input:not([type=radio]):not([type=checkbox]), textarea") || first.querySelector("input"))?.focus({ preventScroll: true });
+        first.scrollIntoView({ block: "center", behavior: "smooth" });
+        return false;
+      }
+      error.hidden = true;
+      return true;
+    };
+
+    const top = () => booking.scrollIntoView({ block: "start", behavior: "smooth" });
+    next.addEventListener("click", () => { if (check()) { show(current + 1); top(); } });
+    prev.addEventListener("click", () => { show(current - 1); top(); });
+    booking.addEventListener("change", (e) => {
+      const q = e.target.closest(".booking-q.is-invalid");
+      if (q) { q.classList.remove("is-invalid"); error.hidden = true; }
+    });
+
+    booking.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!check()) return;
+      const d = new FormData(booking);
+      const lines = [];
+      for (const key of new Set(d.keys())) {
+        const v = d.getAll(key).map((x) => String(x).trim()).filter(Boolean).join("、");
+        lines.push(`${key}：${v || "（未填）"}`);
+      }
+      const subject = `預約免費診斷：${d.get("公司或品牌") || ""}／${d.get("稱呼") || ""}`;
+      location.href = `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
+      steps.forEach((s) => (s.hidden = true));
+      head.forEach((el) => (el.hidden = true));
+      error.hidden = true;
+      foot.hidden = true;
+      done.hidden = false;
+      top();
+    });
+
+    booking.querySelector(".booking-back").addEventListener("click", () => {
+      done.hidden = true;
+      foot.hidden = false;
+      head.forEach((el) => (el.hidden = false));
+      show(steps.length - 1);
+    });
+
+    show(0);
   }
 });

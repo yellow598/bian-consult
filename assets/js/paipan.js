@@ -54,6 +54,7 @@
     name: $("#pp-name"), error: $("#pp-error"), result: $("#pp-result"),
     chart: $("#pp-chart"), sihua: $("#pp-sihua"), note: $("#pp-mode-note"),
     adj: $("#pp-adj"), hyear: $("#pp-hyear"), yearPick: $("#pp-year-pick"),
+    status: $("#pp-status"),
   };
 
   const now = new Date();
@@ -151,6 +152,7 @@
       fillHoroYears();
       render();
       el.result.hidden = false;
+      el.status.textContent = "命盤已排好，結果在下方。";
       el.result.scrollIntoView({ behavior: "smooth", block: "start" });
     } catch (err) {
       el.result.hidden = true;
@@ -172,11 +174,11 @@
   document.querySelectorAll(".pp-seg button").forEach((b) =>
     b.addEventListener("click", () => {
       state.mode = b.dataset.mode;
-      document.querySelectorAll(".pp-seg button").forEach((x) => x.classList.toggle("on", x === b));
       render();
+      el.status.textContent = el.note.textContent;
     }),
   );
-  el.hyear.addEventListener("change", () => { state.hyear = +el.hyear.value; render(); });
+  el.hyear.addEventListener("change", () => { state.hyear = +el.hyear.value; render(); el.status.textContent = el.note.textContent; });
   el.adj.addEventListener("change", render);
 
   /* ---------- 繪製 ---------- */
@@ -197,11 +199,24 @@
     return `<span class="${cls}"><b class="nm">${esc(s.name)}</b>${br}${nat}${sc}</span>`;
   }
 
+  // 給螢幕閱讀器的星曜文字（視覺上是直排與小標籤，朗讀時要是完整的一段話）
+  function starSpeech(s, sihuaMap) {
+    const scoped = sihuaMap[s.name] != null
+      ? `${state.mode === "decadal" ? "大限" : "流年"}化${MUT[sihuaMap[s.name]]}`
+      : "";
+    return s.name + (s.brightness || "") + (s.mutagen ? `化${s.mutagen}` : "") + scoped;
+  }
+
   function render() {
     const c = state.chart;
     const h = state.mode === "natal" ? null : horo();
     const scope = h ? (state.mode === "decadal" ? h.decadal : h.yearly) : null;
     el.yearPick.hidden = state.mode === "natal";
+    document.querySelectorAll(".pp-seg button").forEach((x) => {
+      const on = x.dataset.mode === state.mode;
+      x.classList.toggle("on", on);
+      x.setAttribute("aria-pressed", String(on));
+    });
 
     const sihuaMap = {};
     if (scope) scope.mutagen.forEach((n, i) => (sihuaMap[n] = i));
@@ -231,11 +246,17 @@
       const adj = el.adj.checked
         ? `<div class="pp-adj">${p.adjectiveStars.filter((s) => !isAux(s)).map((s) => `<span>${esc(s.name)}</span>`).join("")}</div>`
         : "";
+      const spokenStars = [
+        ...p.majorStars,
+        ...p.minorStars,
+        ...(el.adj.checked ? p.adjectiveStars : p.adjectiveStars.filter(isAux)),
+      ].map((s) => starSpeech(s, sihuaMap)).join("、") || "無星曜";
+      const spoken = `${palName(names)}${p.isBodyPalace ? "，身宮" : ""}，${p.heavenlyStem}${p.earthlyBranch}，${p.decadal.range[0]}到${p.decadal.range[1]}歲，${spokenStars}`;
       const cls = ["pp-cell"];
       if (i === sel) cls.push("is-sel");
       else if (rel.has(i)) cls.push("is-rel");
       if (i === state.chart.palaces.findIndex((x) => x.name === "命宮")) cls.push("is-soul");
-      return `<div class="${cls.join(" ")}" data-i="${i}" style="grid-row:${r};grid-column:${col}" tabindex="0" role="button" aria-label="${esc(palName(names))}">
+      return `<div class="${cls.join(" ")}" data-i="${i}" style="grid-row:${r};grid-column:${col}" tabindex="0" role="button" aria-pressed="${i === sel}" aria-label="${esc(spoken)}">
         <div class="pp-stars">
           <div class="pp-major">${major || '<span class="s-empty">&nbsp;</span>'}</div>
           <div class="pp-minor">${minor}</div>
@@ -254,7 +275,7 @@
     });
 
     const center = `<div class="pp-center" style="grid-row:2/4;grid-column:2/4">
-      <h3>${state.name ? esc(state.name) : "命盤"}</h3>
+      <h2>${state.name ? esc(state.name) : "命盤"}</h2>
       <dl>
         <div><dt>國曆</dt><dd>${esc(c.solarDate.replace(/-/g, "."))}　${esc(c.time)}</dd></div>
         <div><dt>農曆</dt><dd>${esc(normLunar(c.lunarDate))}</dd></div>
@@ -326,7 +347,7 @@
       .filter(Boolean)
       .map((x) => `<li><i class="${MUT_CLASS[x.m]}">${x.m}</i><b>${esc(x.star)}</b><span>${esc(x.pal)}</span></li>`)
       .join("");
-    return `<div class="pp-sihua-row"><h4>${title}</h4><ul>${li}</ul></div>`;
+    return `<div class="pp-sihua-row"><h3>${title}</h3><ul>${li}</ul></div>`;
   }
 
   /* ---------- 點宮位：標出三方四正 ---------- */
@@ -368,8 +389,10 @@
     try {
       await navigator.clipboard.writeText(lines);
       btn.textContent = "已複製";
+      el.status.textContent = "命盤文字已複製。";
     } catch (e) {
       btn.textContent = "此瀏覽器無法複製";
+      el.status.textContent = "此瀏覽器無法複製。";
     }
     setTimeout(() => (btn.textContent = "複製命盤文字"), 1800);
   });

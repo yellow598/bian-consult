@@ -2,7 +2,10 @@
 <html lang="zh-Hant">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'"
+    />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>比安學姊|數位策略顧問|紫微命理</title>
@@ -14,9 +17,9 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/style.css?v=105" />
+    <link rel="stylesheet" href="assets/css/style.css?v=169" />
   </head>
-  <body class="theme-ziwei">
+  <body class="theme-ziwei page-paipan">
     <header class="site-header"></header>
 
     <main>
@@ -24,16 +27,12 @@
         <div class="container">
           <h1>免費紫微斗數排盤</h1>
           <p class="lead">
-            輸入生辰，立即排出你的命盤。<br />
-            可以切換看本命、大限、流年，點任一宮位會標出它的三方四正。
-          </p>
-          <p class="hero-note">
-            計算全部在你的電腦裡完成，生辰資料不會上傳，也不會被儲存
+            輸入生辰，立即排出你的命盤。
           </p>
         </div>
       </section>
 
-      <section class="section section--alt" id="tool">
+      <section class="section" id="tool">
         <div class="container">
           <form class="pp-form reveal" id="pp-form" autocomplete="off">
             <div class="pp-field pp-field--name">
@@ -68,8 +67,12 @@
               <select id="pp-hour"></select>
             </div>
             <div class="pp-field">
-              <span class="pp-label">性別</span>
-              <div class="pp-radio">
+              <span class="pp-label" id="pp-gender-label">性別</span>
+              <div
+                class="pp-radio"
+                role="radiogroup"
+                aria-labelledby="pp-gender-label"
+              >
                 <label
                   ><input type="radio" name="pp-gender" value="女" checked />
                   女</label
@@ -84,13 +87,29 @@
               <p class="pp-error" id="pp-error" role="alert" hidden></p>
             </div>
           </form>
+          <p class="hero-note pp-privacy">
+            計算全部在你的電腦/手機裡完成，生辰資料不會上傳，也不會被儲存，按重新整理就不見了
+          </p>
+
+          <p class="sr-only" id="pp-status" role="status"></p>
 
           <div class="pp-result" id="pp-result" hidden>
             <div class="pp-toolbar">
-              <div class="pp-seg" role="tablist" aria-label="檢視">
-                <button type="button" class="on" data-mode="natal">本命</button>
-                <button type="button" data-mode="decadal">大限</button>
-                <button type="button" data-mode="yearly">流年</button>
+              <div class="pp-seg" role="group" aria-label="檢視">
+                <button
+                  type="button"
+                  class="on"
+                  data-mode="natal"
+                  aria-pressed="true"
+                >
+                  本命
+                </button>
+                <button type="button" data-mode="decadal" aria-pressed="false">
+                  大限
+                </button>
+                <button type="button" data-mode="yearly" aria-pressed="false">
+                  流年
+                </button>
               </div>
               <label class="pp-year-pick" id="pp-year-pick" hidden>
                 參考年份
@@ -109,7 +128,12 @@
               </div>
             </div>
             <p class="pp-mode-note" id="pp-mode-note"></p>
-            <div class="pp-chart" id="pp-chart" aria-label="紫微斗數命盤"></div>
+            <div
+              class="pp-chart"
+              id="pp-chart"
+              role="group"
+              aria-label="紫微斗數命盤"
+            ></div>
             <div class="pp-legend">
               <span><i class="m-lu">祿</i> 化祿</span>
               <span><i class="m-quan">權</i> 化權</span>
@@ -122,7 +146,7 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section section--alt">
         <div class="container">
           <div class="center reveal" style="margin-bottom: 40px">
             <h2>使用前先知道</h2>
@@ -184,7 +208,7 @@
       integrity="sha256-ASWNhwpnJDDMAqfC2Vj9gIOFOrH+zG9BKgqFXDMc7js="
       crossorigin="anonymous"
     ></script>
-    <script src="assets/js/main.js?v=20"></script>
-    <script src="assets/js/paipan.js?v=10"></script>
+    <script src="assets/js/main.js?v=25"></script>
+    <script src="assets/js/paipan.js?v=11"></script>
   </body>
 </html>
