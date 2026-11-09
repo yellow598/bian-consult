@@ -2031,3 +2031,16 @@ html body.page-home .home-photo-copy h1 { margin-bottom: 18px; }
   html body.page-home .home-photo-copy .home-photo-description { margin-bottom: 20px; font-size: 15px; }
   html body.page-home .home-photo-copy h1 { margin-bottom: 14px; }
 }
+
+/* =========================================================
+   全站內文行高統一 1.5（2026-11-09 使用者指定）
+   範圍：段落、清單、引言、FAQ、圖說、頁尾文字；標題、按鈕、標籤不在內。
+   排盤結果（.pp-result）是圖表，不套用。
+   之後新增內文樣式不要再另外設行高，否則會被這裡蓋過。
+   ========================================================= */
+body :is(main, footer) :is(p, li, blockquote, summary, figcaption, dd, .voice-help):not(.pp-result *) {
+  line-height: 1.5 !important;
+}
+body :is(main, footer) :is(p, li, blockquote, summary, figcaption, dd) :is(mark, .hl, span, strong, a, small, em) {
+  line-height: inherit !important;
+}
